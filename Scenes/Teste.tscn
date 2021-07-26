@@ -5,3 +5,6 @@
 [node name="Teste" type="Node2D"]
 
 [node name="Amdre" parent="." instance=ExtResource( 1 )]
+position = Vector2( 418.294, 275.923 )
+MAX_SPEED = 300.0
+ACCELERATION = 400.0
