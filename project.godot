@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Amdre",
+"language": "GDScript",
+"path": "res://Scenes/Amdre.gd"
+}, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
@@ -18,10 +23,17 @@ _global_script_classes=[ {
 "class": "Recurso",
 "language": "GDScript",
 "path": "res://Resources/Recurso.gd"
+}, {
+"base": "Sprite",
+"class": "RecursoNode",
+"language": "GDScript",
+"path": "res://Scenes/RecursoNode.gd"
 } ]
 _global_script_class_icons={
+"Amdre": "",
 "Item": "",
-"Recurso": ""
+"Recurso": "",
+"RecursoNode": ""
 }
 
 [application]
@@ -33,6 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Enums="*res://Singletons/Enums.gd"
+Events="*res://Singletons/Events.gd"
 
 [display]
 
@@ -60,6 +73,11 @@ move_up={
 move_down={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
 

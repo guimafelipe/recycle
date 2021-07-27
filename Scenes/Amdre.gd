@@ -1,8 +1,9 @@
 extends KinematicBody2D
+class_name Amdre
 
-export(float) var MAX_SPEED = 5.0
-export(float) var ACCELERATION = 20
-export(float) var FRICTION = 250
+export(float) var MAX_SPEED = 300
+export(float) var ACCELERATION = 400
+export(float) var FRICTION = 500
 
 var velocity : Vector2 = Vector2(0,0)
 

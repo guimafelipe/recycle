@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Amdre.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Recurso.tscn" type="PackedScene" id=2]
 
 [node name="Teste" type="Node2D"]
 
 [node name="Amdre" parent="." instance=ExtResource( 1 )]
-position = Vector2( 418.294, 275.923 )
-MAX_SPEED = 300.0
-ACCELERATION = 400.0
+position = Vector2( 433.413, 297.342 )
+
+[node name="Papel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 314.98, 107.093 )
+
+[node name="Papel2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 214.187, 311.201 )
+
+[node name="Papel3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 591.681, 212.559 )

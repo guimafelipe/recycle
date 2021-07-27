@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/RecursoNode.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Papel.tres" type="Resource" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 27.1942
+
+[node name="RecursoNode" type="Sprite"]
+scale = Vector2( 0.614153, 0.666769 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+recurso = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
