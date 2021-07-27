@@ -3,10 +3,17 @@ extends Area2D
 export(Resource) var player_state = player_state as PlayerState
 
 func _ready():
+	update_ui()
+
+func update_ui():
+	$UI/UIMaquina.clear_lists()
 	for item in player_state.items_disponiveis:
 		item = item as Item
 		if item:
-			$UI/UIMaquina.add_item(item)
+			if player_state.items_disponiveis[item]:
+				$UI/UIMaquina.add_recycle(item)
+			else:
+				$UI/UIMaquina.add_craft(item)
 
 
 func _input(event : InputEvent):
@@ -16,6 +23,7 @@ func _input(event : InputEvent):
 
 func interact() -> void:
 	player_state.game_state = Enums.GameState.MAQUINA
+	update_ui()
 	$UI/UIMaquina.visible = true
 
 

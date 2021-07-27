@@ -1,7 +1,7 @@
 extends Resource
 class_name PlayerState
 
-export(Array, Resource) var items_disponiveis  
+export(Dictionary) var items_disponiveis
 
 var recursos := {
 		Enums.RecursoTipo.PAPEL: 0,
@@ -11,3 +11,4 @@ var recursos := {
 	}
 
 var game_state = Enums.GameState.FREE
+

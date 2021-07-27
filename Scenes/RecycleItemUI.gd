@@ -1,10 +1,9 @@
 extends MarginContainer
-class_name CraftItemUI
+class_name RecycleItemUI
 
 
 export(NodePath) onready var nome = get_node(nome) as Label 
 export(NodePath) onready var icon = get_node(icon) as TextureRect
-export(NodePath) onready var description = get_node(description) as Label
 export(NodePath) onready var qnt_papel = get_node(qnt_papel) as Label
 export(NodePath) onready var qnt_plastico = get_node(qnt_plastico) as Label
 export(NodePath) onready var qnt_metal = get_node(qnt_metal) as Label
@@ -17,11 +16,10 @@ func _ready():
 	if item:
 		nome.text = item.nome
 		icon.texture = item.textura
-		description.text = item.descricao
-		qnt_papel.text = str(item.recursos[Enums.RecursoTipo.PAPEL])
-		qnt_plastico.text = str(item.recursos[Enums.RecursoTipo.PLASTICO])
-		qnt_metal.text = str(item.recursos[Enums.RecursoTipo.METAL])
-		qnt_vidro.text = str(item.recursos[Enums.RecursoTipo.VIDRO])
+		qnt_papel.text = str(item.recycle[Enums.RecursoTipo.PAPEL])
+		qnt_plastico.text = str(item.recycle[Enums.RecursoTipo.PLASTICO])
+		qnt_metal.text = str(item.recycle[Enums.RecursoTipo.METAL])
+		qnt_vidro.text = str(item.recycle[Enums.RecursoTipo.VIDRO])
 
 
 func for_item(_item : Item):

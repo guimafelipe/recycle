@@ -12,3 +12,10 @@ export(Dictionary) var recursos = {
 	Enums.RecursoTipo.METAL : 0,
 	Enums.RecursoTipo.VIDRO : 0
 }
+
+export(Dictionary) var recycle = {
+	Enums.RecursoTipo.PAPEL : 0,
+	Enums.RecursoTipo.PLASTICO : 0,
+	Enums.RecursoTipo.METAL : 0,
+	Enums.RecursoTipo.VIDRO : 0
+}
