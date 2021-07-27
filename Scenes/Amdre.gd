@@ -20,9 +20,9 @@ func _physics_process(delta):
 
 
 func _input(event : InputEvent):
-	if event.is_action("interact"):
+	if event.is_action_pressed("interact"):
 		if player_state.game_state == Enums.GameState.FREE:
-			interact()
+			call_deferred("interact")
 
 
 func move(delta : float) -> void:

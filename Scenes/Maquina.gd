@@ -3,11 +3,21 @@ extends Area2D
 export(Resource) var player_state = player_state as PlayerState
 
 func _ready():
-	pass
+	for item in player_state.items_disponiveis:
+		item = item as Item
+		if item:
+			$UI/UIMaquina.add_item(item)
+
+
+func _input(event : InputEvent):
+	if event.is_action_pressed("interact") and player_state.game_state == Enums.GameState.MAQUINA:
+		call_deferred("finish_interact")
+
 
 func interact() -> void:
 	player_state.game_state = Enums.GameState.MAQUINA
 	$UI/UIMaquina.visible = true
+
 
 func finish_interact() -> void:
 	player_state.game_state = Enums.GameState.FREE

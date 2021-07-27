@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+textura = ExtResource( 2 )
+nome = "Bussola"
+descricao = "Uma bússola improvisada e funcional."
+id = 3
+recursos = {
+0: 1,
+1: 2,
+2: 2,
+3: 2
+}

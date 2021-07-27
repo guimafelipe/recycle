@@ -14,6 +14,13 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+nome = NodePath("Content/NomeIcon/Name")
+icon = NodePath("Content/NomeIcon/Icon")
+description = NodePath("Content/Description")
+qnt_papel = NodePath("Content/Recursos/Papel/Cost")
+qnt_plastico = NodePath("Content/Recursos/Plastico/Cost")
+qnt_metal = NodePath("Content/Recursos/Metal/Cost")
+qnt_vidro = NodePath("Content/Recursos/Vidro/Cost")
 
 [node name="Content" type="HBoxContainer" parent="."]
 margin_right = 900.0
