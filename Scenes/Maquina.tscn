@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Maquina.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Items/EspadaDoReiDesnutrido.tres" type="Resource" id=6]
 [ext_resource path="res://Items/Oculos.tres" type="Resource" id=7]
 [ext_resource path="res://Scenes/RecycleItemUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/TabContainer.gd" type="Script" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.2162
@@ -28,7 +29,6 @@ shape = SubResource( 1 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-focus_mode = 2
 custom_constants/margin_right = 30
 custom_constants/margin_top = 30
 custom_constants/margin_left = 30
@@ -45,6 +45,9 @@ margin_left = 30.0
 margin_top = 30.0
 margin_right = 870.0
 margin_bottom = 570.0
+use_hidden_tabs_for_min_size = true
+script = ExtResource( 9 )
+player_state = ExtResource( 3 )
 
 [node name="Craft" type="ScrollContainer" parent="UI/UIMaquina/TabContainer"]
 anchor_right = 1.0
@@ -53,13 +56,11 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-focus_mode = 2
 follow_focus = true
 
 [node name="Lista" type="VBoxContainer" parent="UI/UIMaquina/TabContainer/Craft"]
 margin_right = 832.0
 margin_bottom = 296.0
-focus_mode = 2
 size_flags_horizontal = 3
 custom_constants/separation = 20
 alignment = 1
@@ -80,36 +81,23 @@ margin_bottom = 296.0
 item = ExtResource( 7 )
 
 [node name="Recycle" type="ScrollContainer" parent="UI/UIMaquina/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-focus_mode = 2
 follow_focus = true
 
 [node name="Lista" type="VBoxContainer" parent="UI/UIMaquina/TabContainer/Recycle"]
 margin_right = 832.0
 margin_bottom = 138.0
-focus_mode = 2
 size_flags_horizontal = 3
 custom_constants/separation = 20
 alignment = 1
 
 [node name="RecycleItemUI" parent="UI/UIMaquina/TabContainer/Recycle/Lista" instance=ExtResource( 8 )]
-
-[node name="PopupPanel" type="PopupPanel" parent="UI/UIMaquina"]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 870.0
-margin_bottom = 570.0
-
-[node name="PopupMenu" type="PopupMenu" parent="UI/UIMaquina"]
-margin_left = 30.0
-margin_top = 30.0
-margin_right = 870.0
-margin_bottom = 570.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

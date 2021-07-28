@@ -11,6 +11,7 @@ export(NodePath) onready var qnt_metal = get_node(qnt_metal) as Label
 export(NodePath) onready var qnt_vidro = get_node(qnt_vidro) as Label
 
 export(Resource) var item = item as Item
+export(Resource) var player_state = player_state as PlayerState
 
 func _ready():
 	set_focus_mode(FOCUS_ALL)
@@ -22,6 +23,15 @@ func _ready():
 		qnt_plastico.text = str(item.recursos[Enums.RecursoTipo.PLASTICO])
 		qnt_metal.text = str(item.recursos[Enums.RecursoTipo.METAL])
 		qnt_vidro.text = str(item.recursos[Enums.RecursoTipo.VIDRO])
+
+
+func _input(event):
+	if player_state.game_state == Enums.GameState.MAQUINA:
+		if has_focus() and event.is_action_pressed("ui_accept") and item:
+			if item.can_craft(player_state):
+				item.craft(player_state)
+				player_state.items_disponiveis[item] = true
+				Events.emit_signal("items_changed")
 
 
 func for_item(_item : Item):

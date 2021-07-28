@@ -10,7 +10,7 @@ nome = "Mapinha"
 descricao = "Um mapa improvisado,"
 id = 2
 recursos = {
-0: 6,
+0: 2,
 1: 0,
 2: 0,
 3: 0

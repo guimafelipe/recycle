@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource( 1 )
 items_disponiveis = {
-Resource( "res://Items/Mapa.tres" ): true,
-Resource( "res://Items/EspadaDoReiDesnutrido.tres" ): false,
+Resource( "res://Items/Oculos.tres" ): true,
 Resource( "res://Items/Bussola.tres" ): false,
-Resource( "res://Items/Oculos.tres" ): true
+Resource( "res://Items/Mapa.tres" ): false,
+Resource( "res://Items/EspadaDoReiDesnutrido.tres" ): false
 }

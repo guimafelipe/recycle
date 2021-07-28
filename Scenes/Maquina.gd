@@ -2,8 +2,11 @@ extends Area2D
 
 export(Resource) var player_state = player_state as PlayerState
 
+
 func _ready():
 	update_ui()
+	Events.connect("items_changed", self, "update_ui")
+
 
 func update_ui():
 	$UI/UIMaquina.clear_lists()
