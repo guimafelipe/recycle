@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Scenes/CraftItemUI.gd"
 }, {
 "base": "Resource",
+"class": "Dialogue",
+"language": "GDScript",
+"path": "res://Dialogues/Dialogue.gd"
+}, {
+"base": "Resource",
 "class": "Item",
 "language": "GDScript",
 "path": "res://Items/Item.gd"
@@ -47,6 +52,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Amdre": "",
 "CraftItemUI": "",
+"Dialogue": "",
 "Item": "",
 "PlayerState": "",
 "Recurso": "",

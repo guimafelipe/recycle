@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Dialogues/Dialogue.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+falas = [ "Aloo galera de cowboy", "Aloo galera de peão", "Quem gosta de rodeio bate forte com a mão", "clap clap, clap" ]
+textura = ExtResource( 2 )

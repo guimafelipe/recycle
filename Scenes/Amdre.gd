@@ -17,6 +17,8 @@ func _ready():
 func _physics_process(delta):
 	if player_state.game_state == Enums.GameState.FREE:
 		move(delta)
+	else:
+		velocity = Vector2(0,0)
 
 
 func _input(event : InputEvent):
