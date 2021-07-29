@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Items/Item.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+nome = "Manopla do Rei Desnutrido"
+descricao = "Uma manopla pesada e ameaçadora. Deve ser por isso que o Rei não conseguia comer."
+id = 11
+recursos = {
+0: 0,
+1: 0,
+2: 0,
+3: 0
+}
+recycle = {
+0: 0,
+1: 0,
+2: 0,
+3: 0
+}
