@@ -12,3 +12,5 @@ var recursos := {
 
 var game_state = Enums.GameState.FREE
 
+export(int) var hp = 80
+export(int) var max_hp = 100

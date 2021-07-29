@@ -9,7 +9,7 @@
 radius = 27.1942
 
 [node name="RecursoNode" type="Sprite"]
-scale = Vector2( 0.614153, 0.666769 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 recurso = ExtResource( 3 )

@@ -18,6 +18,6 @@ func get_tipo(): # -> Enums.RecursoTipo
 func _on_body_entered(body : Amdre):
 	if body:
 		#aumentar contador do meu tipo
-		Events.emit_signal("recurso_coletado", recurso, 1)
 		player_state.recursos[recurso.tipo] += 1
 		queue_free()
+		Events.emit_signal("recurso_changed")

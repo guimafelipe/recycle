@@ -32,6 +32,7 @@ func _input(event):
 				item.craft(player_state)
 				player_state.items_disponiveis[item] = true
 				Events.emit_signal("items_changed")
+				Events.emit_signal("recurso_changed")
 
 
 func for_item(_item : Item):
