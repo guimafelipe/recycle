@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Amdre",
 "language": "GDScript",
-"path": "res://Scenes/Amdre.gd"
+"path": "res://Scenes/Amdre/Amdre.gd"
 }, {
 "base": "MarginContainer",
 "class": "CraftItemUI",
 "language": "GDScript",
-"path": "res://Scenes/CraftItemUI.gd"
+"path": "res://Scenes/Maquina/CraftItemUI.gd"
 }, {
 "base": "Resource",
 "class": "Dialogue",
@@ -42,12 +42,12 @@ _global_script_classes=[ {
 "base": "Sprite",
 "class": "RecursoNode",
 "language": "GDScript",
-"path": "res://Scenes/RecursoNode.gd"
+"path": "res://Scenes/Recurso/RecursoNode.gd"
 }, {
 "base": "MarginContainer",
 "class": "RecycleItemUI",
 "language": "GDScript",
-"path": "res://Scenes/RecycleItemUI.gd"
+"path": "res://Scenes/Maquina/RecycleItemUI.gd"
 } ]
 _global_script_class_icons={
 "Amdre": "",

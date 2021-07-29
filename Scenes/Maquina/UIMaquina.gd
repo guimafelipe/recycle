@@ -1,7 +1,7 @@
 extends MarginContainer
 
-var CraftItemUIScene = preload("res://Scenes/CraftItemUI.tscn")
-var RecycleItemUIScene = preload("res://Scenes/RecycleItemUI.tscn")
+var CraftItemUIScene = preload("res://Scenes/Maquina/CraftItemUI.tscn")
+var RecycleItemUIScene = preload("res://Scenes/Maquina/RecycleItemUI.tscn")
 export(NodePath) onready var craft_lista = get_node(craft_lista) as VBoxContainer
 export(NodePath) onready var recycle_lista = get_node(recycle_lista) as VBoxContainer
 
