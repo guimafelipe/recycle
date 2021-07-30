@@ -18,3 +18,11 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+limit_left = -1800
+limit_top = -1200
+limit_right = 1800
+limit_bottom = 1200

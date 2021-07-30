@@ -8,5 +8,6 @@ func _ready():
 
 
 func _on_TesteDialog_body_entered(body : Amdre):
-	Events.emit_signal("start_dialog", dialogue)
+	if body:
+		Events.emit_signal("start_dialog", dialogue)
 	

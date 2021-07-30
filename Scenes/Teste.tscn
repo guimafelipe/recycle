@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Recurso/Recurso.tscn" type="PackedScene" id=2]
@@ -7,11 +7,17 @@
 [ext_resource path="res://Scenes/DialogUI/DialogUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://testeThings/TesteDialog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Inimigos/Tatu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/EnvironmentObjects/LevelBackground.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/EnvironmentObjects/GreenTree.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnvironmentObjects/YellowTree.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/EnvironmentObjects/PinkTree.tscn" type="PackedScene" id=11]
 
-[node name="Teste" type="Node2D"]
+[node name="Teste" type="YSort"]
+
+[node name="LevelBackground" parent="." instance=ExtResource( 8 )]
 
 [node name="Amdre" parent="." instance=ExtResource( 1 )]
-position = Vector2( 433.413, 297.342 )
+position = Vector2( 801.829, 233.27 )
 
 [node name="Papel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 314.98, 107.093 )
@@ -32,4 +38,15 @@ position = Vector2( 69.5927, 154.9 )
 [node name="TesteDialog" parent="." instance=ExtResource( 6 )]
 
 [node name="Tatu" parent="." instance=ExtResource( 7 )]
-position = Vector2( 577.814, 563.527 )
+position = Vector2( 866.139, 558.188 )
+
+[node name="Trees" type="YSort" parent="."]
+
+[node name="GreenTree" parent="Trees" instance=ExtResource( 9 )]
+position = Vector2( 476.115, 201.116 )
+
+[node name="YellowTree" parent="Trees" instance=ExtResource( 10 )]
+position = Vector2( -245.522, 482.918 )
+
+[node name="PinkTree" parent="Trees" instance=ExtResource( 11 )]
+position = Vector2( -526.496, 593.177 )
