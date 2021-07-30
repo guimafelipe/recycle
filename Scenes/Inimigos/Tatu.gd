@@ -92,7 +92,7 @@ func atacando(delta : float):
 			$BouncingTimer.start()
 			return
 	
-	if global_position.distance_to(alvo) < 2:
+	if global_position.distance_to(alvo) < 10:
 		rescan()
 
 
