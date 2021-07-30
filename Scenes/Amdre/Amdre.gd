@@ -54,3 +54,15 @@ func remove_interact():
 func interact():
 	if to_interact:
 		to_interact.interact()
+
+
+func heal(val : int) -> void:
+	player_state.hp += val
+	player_state.hp = min(player_state.hp, player_state.max_hp)
+	Events.emit_signal("hp_changed")
+
+
+func take_damage(dmg : int) -> void:
+	player_state.hp -= dmg
+	player_state.hp = max(0, player_state.hp)
+	Events.emit_signal("hp_changed")
