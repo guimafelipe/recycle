@@ -6,6 +6,10 @@ export(String, MULTILINE) var nome
 export(String, MULTILINE) var descricao
 export(int) var id
 
+export(Enums.Tipo) var tipo
+
+export(Resource) var implementation = implementation as ItemImplementation
+
 export(Dictionary) var recursos = {
 	Enums.RecursoTipo.PAPEL : 0,
 	Enums.RecursoTipo.PLASTICO : 0,
@@ -28,6 +32,9 @@ func craft(player_state : PlayerState) -> void:
 	player_state.recursos[Enums.RecursoTipo.PLASTICO] -= recursos[Enums.RecursoTipo.PLASTICO]
 	player_state.recursos[Enums.RecursoTipo.METAL] -= recursos[Enums.RecursoTipo.METAL]
 	player_state.recursos[Enums.RecursoTipo.VIDRO] -= recursos[Enums.RecursoTipo.VIDRO]
+	
+	if implementation:
+		implementation.on_craft(player_state)
 
 
 func do_recycle(player_state : PlayerState) -> void:
@@ -35,6 +42,9 @@ func do_recycle(player_state : PlayerState) -> void:
 	player_state.recursos[Enums.RecursoTipo.PLASTICO] += recycle[Enums.RecursoTipo.PLASTICO]
 	player_state.recursos[Enums.RecursoTipo.METAL] += recycle[Enums.RecursoTipo.METAL]
 	player_state.recursos[Enums.RecursoTipo.VIDRO] += recycle[Enums.RecursoTipo.VIDRO]
+
+	if implementation:
+		implementation.on_recycle(player_state)
 
 
 func can_craft(player_state : PlayerState) -> bool:

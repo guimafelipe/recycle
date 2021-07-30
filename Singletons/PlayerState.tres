@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 items_disponiveis = {
 Resource( "res://Items/SapatosDeCorrida.tres" ): false,
-Resource( "res://Items/Baldinho.tres" ): false,
+Resource( "res://Items/Baldinho/Baldinho.tres" ): false,
 Resource( "res://Items/Mapa.tres" ): false,
 Resource( "res://Items/Bussola.tres" ): false,
 Resource( "res://Items/PegadorDeFrutas.tres" ): false,
@@ -17,5 +17,16 @@ Resource( "res://Items/Ponte.tres" ): false,
 Resource( "res://Items/Estilingue.tres" ): false,
 Resource( "res://Items/Oculos.tres" ): true
 }
+recursos = {
+0: 5,
+1: 5,
+2: 5,
+3: 5
+}
 hp = 80
 max_hp = 100
+dano = 20
+MAX_SPEED = 300.0
+ACCELERATION = 400.0
+FRICTION = 500.0
+tem_baldinho = false

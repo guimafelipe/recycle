@@ -44,8 +44,6 @@ func _physics_process(delta : float):
 		$RecuperandoTimer.set_paused(true)
 		return
 	
-	print(str(state))
-	
 	if state == States.IDLE:
 		idle()
 	elif state == States.SEGUINDO:

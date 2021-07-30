@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/Amdre/Amdre.gd"
 }, {
+"base": "ItemImplementation",
+"class": "BaldinhoImp",
+"language": "GDScript",
+"path": "res://Items/Baldinho/BaldinhoImp.gd"
+}, {
 "base": "MarginContainer",
 "class": "CraftItemUI",
 "language": "GDScript",
@@ -28,6 +33,11 @@ _global_script_classes=[ {
 "class": "Item",
 "language": "GDScript",
 "path": "res://Items/Item.gd"
+}, {
+"base": "Resource",
+"class": "ItemImplementation",
+"language": "GDScript",
+"path": "res://Items/ItemImplementation.gd"
 }, {
 "base": "Resource",
 "class": "PlayerState",
@@ -51,9 +61,11 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Amdre": "",
+"BaldinhoImp": "",
 "CraftItemUI": "",
 "Dialogue": "",
 "Item": "",
+"ItemImplementation": "",
 "PlayerState": "",
 "Recurso": "",
 "RecursoNode": "",

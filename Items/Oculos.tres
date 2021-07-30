@@ -9,6 +9,7 @@ textura = ExtResource( 2 )
 nome = "Óculos do seu grau"
 descricao = "Um óculos feito de material reciclado!"
 id = 1
+tipo = 0
 recursos = {
 0: 0,
 1: 3,

@@ -7,6 +7,7 @@ script = ExtResource( 1 )
 nome = "Rede de Arremesso"
 descricao = "Ótima para frear o avanço de monstros. Só não deixe chegar ao mar."
 id = 5
+tipo = 0
 recursos = {
 0: 0,
 1: 0,

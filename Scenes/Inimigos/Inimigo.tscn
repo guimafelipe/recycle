@@ -28,19 +28,19 @@ func take_damage(val : int) -> void:
 
 "
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 15.0
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=8]
 radius = 214.127
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=9]
 radius = 36.5763
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=10]
 radius = 135.811
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=11]
 radius = 268.828
 
 [node name="Inimigo" type="KinematicBody2D" groups=[
@@ -49,28 +49,28 @@ radius = 268.828
 script = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
 [node name="RangeVisao" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeVisao"]
-shape = SubResource( 2 )
+shape = SubResource( 8 )
 
 [node name="RangeMelee" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeMelee"]
-shape = SubResource( 3 )
+shape = SubResource( 9 )
 
 [node name="RangeRanged" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeRanged"]
-shape = SubResource( 4 )
+shape = SubResource( 10 )
 
 [node name="RangeDesistencia" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeDesistencia"]
-shape = SubResource( 5 )
+shape = SubResource( 11 )
 
 [node name="Behaviour" type="Node" parent="."]

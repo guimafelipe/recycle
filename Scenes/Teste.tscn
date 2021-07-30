@@ -12,8 +12,6 @@
 
 [node name="Amdre" parent="." instance=ExtResource( 1 )]
 position = Vector2( 433.413, 297.342 )
-MAX_SPEED = 400.0
-ACCELERATION = 566.0
 
 [node name="Papel" parent="." instance=ExtResource( 2 )]
 position = Vector2( 314.98, 107.093 )

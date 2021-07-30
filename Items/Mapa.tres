@@ -9,6 +9,7 @@ textura = ExtResource( 2 )
 nome = "Mapinha"
 descricao = "Um mapa improvisado,"
 id = 2
+tipo = 0
 recursos = {
 0: 2,
 1: 0,

@@ -3,16 +3,13 @@ class_name Amdre
 
 export(Resource) var player_state = player_state as PlayerState
 
-export(float) var MAX_SPEED = 300
-export(float) var ACCELERATION = 400
-export(float) var FRICTION = 500
-
 var to_interact = null
 
 var velocity : Vector2 = Vector2(0,0)
 
 func _ready():
 	pass
+
 
 func _physics_process(delta):
 	if player_state.game_state == Enums.GameState.FREE:
@@ -33,9 +30,9 @@ func move(delta : float) -> void:
 	var input_vector = Vector2(dx, dy).normalized()
 	
 	if input_vector != Vector2.ZERO:
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+		velocity = velocity.move_toward(input_vector * player_state.MAX_SPEED, player_state.ACCELERATION * delta)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION*delta)
+		velocity = velocity.move_toward(Vector2.ZERO, player_state.FRICTION*delta)
 	
 	velocity = move_and_slide(velocity)
 

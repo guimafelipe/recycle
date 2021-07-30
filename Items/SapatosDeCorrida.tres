@@ -7,6 +7,7 @@ script = ExtResource( 1 )
 nome = "Sapatos de Corrida"
 descricao = "Parecem bem velozes."
 id = 8
+tipo = 0
 recursos = {
 0: 0,
 1: 0,
