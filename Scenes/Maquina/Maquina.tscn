@@ -29,6 +29,7 @@ shape = SubResource( 1 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 custom_constants/margin_right = 30
 custom_constants/margin_top = 30
 custom_constants/margin_left = 30
@@ -45,6 +46,7 @@ margin_left = 30.0
 margin_top = 30.0
 margin_right = 870.0
 margin_bottom = 570.0
+mouse_filter = 1
 use_hidden_tabs_for_min_size = true
 script = ExtResource( 9 )
 player_state = ExtResource( 3 )
@@ -56,6 +58,7 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
+mouse_filter = 1
 follow_focus = true
 
 [node name="Lista" type="VBoxContainer" parent="UI/UIMaquina/TabContainer/Craft"]
@@ -81,13 +84,13 @@ margin_bottom = 296.0
 item = ExtResource( 7 )
 
 [node name="Recycle" type="ScrollContainer" parent="UI/UIMaquina/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
+mouse_filter = 1
 follow_focus = true
 
 [node name="Lista" type="VBoxContainer" parent="UI/UIMaquina/TabContainer/Recycle"]

@@ -7,4 +7,5 @@ func _input(event : InputEvent):
 		if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
 			current_tab = (current_tab + 1) % 2
 			var curr = get_current_tab_control() as ScrollContainer
-			curr.get_child(0).get_child(0).grab_focus()
+			if curr.get_child(0).get_child_count() > 0:
+				curr.get_child(0).get_child(0).grab_focus()

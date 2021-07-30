@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends KinematicBody2D
+class_name Inimigo
+
+export(int) var max_hp = 20
+export(int) var hp = 20
+export(Script) var behaviour setget set_behaviour
+
+
+enum State {
+	IDLE,
+	ANDANDO,
+	ATACANDO,
+	IMOBILIZADO,
+	MORTO
+}
+
+
+func set_behaviour(behaviour : Script):
+	$Behaviour.set_script(behaviour)
+
+
+func take_damage(val : int) -> void:
+	hp -= val
+	hp = max(0, hp)
+
+"
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 214.127
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 36.5763
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 135.811
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 268.828
+
+[node name="Inimigo" type="KinematicBody2D" groups=[
+"Inimigos",
+]]
+script = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="RangeVisao" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeVisao"]
+shape = SubResource( 2 )
+
+[node name="RangeMelee" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeMelee"]
+shape = SubResource( 3 )
+
+[node name="RangeRanged" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeRanged"]
+shape = SubResource( 4 )
+
+[node name="RangeDesistencia" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeDesistencia"]
+shape = SubResource( 5 )
+
+[node name="Behaviour" type="Node" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Recurso/Recurso.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/MainUI/MainUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/DialogUI/DialogUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://testeThings/TesteDialog.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Inimigos/Tatu.tscn" type="PackedScene" id=7]
 
 [node name="Teste" type="Node2D"]
 
@@ -31,3 +32,6 @@ position = Vector2( 69.5927, 154.9 )
 [node name="DialogUI" parent="." instance=ExtResource( 5 )]
 
 [node name="TesteDialog" parent="." instance=ExtResource( 6 )]
+
+[node name="Tatu" parent="." instance=ExtResource( 7 )]
+position = Vector2( 577.814, 563.527 )
