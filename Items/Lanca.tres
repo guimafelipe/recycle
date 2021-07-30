@@ -8,6 +8,7 @@ nome = "Lança Titilandus"
 descricao = "Com isso posso cutucar os montros de mais longe. 
 Mas é melhor evitar dragões adormecidos."
 id = 0
+tipo = 0
 recursos = {
 0: 0,
 1: 0,

@@ -7,6 +7,7 @@ script = ExtResource( 1 )
 nome = "Ponte"
 descricao = "É, uma ponte. Deve ser útil em uma ilha desconhecida."
 id = 12
+tipo = 0
 recursos = {
 0: 0,
 1: 0,

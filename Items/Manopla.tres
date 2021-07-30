@@ -7,6 +7,7 @@ script = ExtResource( 1 )
 nome = "Manopla do Rei Desnutrido"
 descricao = "Uma manopla pesada e ameaçadora. Deve ser por isso que o Rei não conseguia comer."
 id = 11
+tipo = 0
 recursos = {
 0: 0,
 1: 0,

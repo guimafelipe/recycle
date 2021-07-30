@@ -7,6 +7,7 @@ script = ExtResource( 1 )
 nome = "Estilingue"
 descricao = "Pode não parecer, mas alcança grandes distâncias."
 id = 9
+tipo = 0
 recursos = {
 0: 0,
 1: 0,

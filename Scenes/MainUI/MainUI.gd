@@ -11,6 +11,7 @@ func _ready():
 	Events.connect("items_changed", self, "update_ui")
 	Events.connect("hp_changed", self, "update_hp")
 	update_ui()
+	update_hp()
 
 
 func update_ui() -> void:
@@ -22,9 +23,12 @@ func update_ui() -> void:
 	# atualizar armas
 
 
-func update_hp(hp : int):
+func update_hp():
 	var barra = vida.get_child(0) as TextureProgress
 	var label = barra.get_child(0) as Label
 	
+	var hp : int = player_state.hp
+	
 	barra.value = hp
+	barra.max_value = player_state.max_hp
 	label.text = str(hp)
