@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character/CharacterSpritesheet.png" type="Texture" id=2]
@@ -26,9 +26,6 @@ resource_name = "AttackUp"
 
 [sub_resource type="Animation" id=7]
 resource_name = "Death"
-
-[sub_resource type="Animation" id=8]
-resource_name = "Hurt"
 
 [sub_resource type="Animation" id=9]
 resource_name = "IdleDown"
@@ -140,10 +137,34 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, true, true, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Arma:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -75.4874, -62.7805 ), Vector2( -84.9425, -58.5535 ), Vector2( -81.3829, -54.9939 ), Vector2( -82.0504, -57.6636 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Arma:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -368.506, -368.506, -368.506, -368.506 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -274,7 +295,7 @@ tracks/4/keys = {
 }
 
 [sub_resource type="Animation" id=16]
-length = 0.4
+length = 0.3
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -283,10 +304,34 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.4 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 4, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Arma:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 86.1391, -31.6343 ), Vector2( 96.8178, -42.313 ), Vector2( 82.1346, -48.3198 ), Vector2( 82.1346, -48.3198 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Arma:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -336.2, -336.2, -336.2, -336.2 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=17]
@@ -312,44 +357,44 @@ blend_point_3/node = SubResource( 20 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=24]
+[sub_resource type="AnimationNodeAnimation" id=22]
 animation = "WalkDown"
 
-[sub_resource type="AnimationNodeAnimation" id=25]
+[sub_resource type="AnimationNodeAnimation" id=23]
 animation = "WalkUp"
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=24]
 animation = "WalkRight"
 
-[sub_resource type="AnimationNodeAnimation" id=27]
+[sub_resource type="AnimationNodeAnimation" id=25]
 animation = "WalkLeft"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=28]
-blend_point_0/node = SubResource( 24 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=26]
+blend_point_0/node = SubResource( 22 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 25 )
+blend_point_1/node = SubResource( 23 )
 blend_point_1/pos = Vector2( 0, -1.1 )
-blend_point_2/node = SubResource( 26 )
+blend_point_2/node = SubResource( 24 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 27 )
+blend_point_3/node = SubResource( 25 )
 blend_point_3/pos = Vector2( -1, 0 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
 
-[sub_resource type="AnimationNodeStateMachine" id=22]
+[sub_resource type="AnimationNodeStateMachine" id=29]
 states/Idle/node = SubResource( 21 )
 states/Idle/position = Vector2( 104, 67 )
-states/Walk/node = SubResource( 28 )
+states/Walk/node = SubResource( 26 )
 states/Walk/position = Vector2( 272, 67 )
-transitions = [ "Idle", "Walk", SubResource( 29 ), "Walk", "Idle", SubResource( 30 ) ]
+transitions = [ "Idle", "Walk", SubResource( 27 ), "Walk", "Idle", SubResource( 28 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=30]
 
 [node name="Amdre" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -361,6 +406,7 @@ position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
 flip_h = true
 hframes = 17
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -386,7 +432,6 @@ anims/AttackLeft = SubResource( 4 )
 anims/AttackRight = SubResource( 5 )
 anims/AttackUp = SubResource( 6 )
 anims/Death = SubResource( 7 )
-anims/Hurt = SubResource( 8 )
 anims/IdleDown = SubResource( 9 )
 anims/IdleLeft = SubResource( 10 )
 anims/IdleRight = SubResource( 11 )
@@ -397,13 +442,14 @@ anims/WalkRight = SubResource( 15 )
 anims/WalkUp = SubResource( 16 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 22 )
+tree_root = SubResource( 29 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 23 )
+parameters/playback = SubResource( 30 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
 
 [node name="Arma" type="Sprite" parent="."]
-position = Vector2( 52.7823, -76.8672 )
-rotation = -5.52116
+position = Vector2( 86.1391, -31.6343 )
+rotation = -5.8678
 texture = ExtResource( 4 )
+flip_h = true
