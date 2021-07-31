@@ -1,15 +1,17 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://tatu.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
+textura = ExtResource( 2 )
 nome = "Estilingue"
 descricao = "Pode não parecer, mas alcança grandes distâncias."
 id = 9
 tipo = 0
 recursos = {
-0: 0,
+0: 99,
 1: 0,
 2: 0,
 3: 0

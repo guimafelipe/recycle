@@ -17,6 +17,7 @@ func update_ui():
 				$UI/UIMaquina.add_recycle(item)
 			else:
 				$UI/UIMaquina.add_craft(item)
+	$UI/UIMaquina.reseta_foco()
 
 
 func _input(event : InputEvent):

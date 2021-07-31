@@ -21,3 +21,9 @@ export(float) var ACCELERATION = 400
 export(float) var FRICTION = 500
 
 export(bool) var tem_baldinho = false
+
+var tem_esquerda := false
+var tem_direita := false
+
+var can_melee_attack := false
+var can_ranged_attack := false
