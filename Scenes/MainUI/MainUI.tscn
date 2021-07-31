@@ -14,6 +14,8 @@ vida = NodePath("Margin/Vida")
 [node name="Margin" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -25.2269
+margin_bottom = -25.2269
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -150,6 +152,19 @@ margin_left = 79.0
 margin_right = 143.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Label" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -136.0
+margin_top = -70.0
+text = "Interact"
 __meta__ = {
 "_edit_use_anchors_": false
 }

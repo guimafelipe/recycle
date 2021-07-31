@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name Amdre
 
 export(Resource) var player_state = player_state as PlayerState
+export(NodePath) onready var hitbox = get_node(hitbox) as Area2D
 
 var to_interact = null
 
@@ -19,9 +20,11 @@ func _physics_process(delta):
 
 
 func _input(event : InputEvent):
-	if event.is_action_pressed("interact"):
-		if player_state.game_state == Enums.GameState.FREE:
+	if player_state.game_state == Enums.GameState.FREE:
+		if event.is_action_pressed("interact"):
 			call_deferred("interact")
+		if event.is_action_pressed("attack"):
+			attack()
 
 
 func move(delta : float) -> void:
@@ -63,3 +66,12 @@ func take_damage(dmg : int) -> void:
 	player_state.hp -= dmg
 	player_state.hp = max(0, player_state.hp)
 	Events.emit_signal("hp_changed")
+
+
+func attack():
+	var bodies = hitbox.get_overlapping_bodies() as Array
+	for body in bodies:
+		body = body as PhysicsBody2D
+		if body.is_in_group("Enemy"):
+			body.take_damage(player_state.dano)
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character/mc.png" type="Texture" id=2]
@@ -8,9 +8,13 @@
 radius = 25.2769
 height = 36.056
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 14.7449, 37.3417 )
+
 [node name="Amdre" type="KinematicBody2D"]
 script = ExtResource( 1 )
 player_state = ExtResource( 3 )
+hitbox = NodePath("HitBox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -26,3 +30,9 @@ limit_left = -1800
 limit_top = -1200
 limit_right = 1800
 limit_bottom = 1200
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( 41.2724, -43.6535 )
+shape = SubResource( 2 )

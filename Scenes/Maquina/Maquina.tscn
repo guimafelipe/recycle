@@ -113,6 +113,7 @@ alignment = 1
 position = Vector2( -39.1995, 0 )
 rotation = 1.5708
 shape = SubResource( 2 )
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="visibility_changed" from="UI/UIMaquina" to="UI/UIMaquina" method="_on_UIMaquina_visibility_changed"]
