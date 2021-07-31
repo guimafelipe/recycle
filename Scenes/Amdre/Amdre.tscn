@@ -262,6 +262,7 @@ states/Idle/position = Vector2( 104, 67 )
 states/Walk/node = SubResource( 28 )
 states/Walk/position = Vector2( 272, 67 )
 transitions = [ "Idle", "Walk", SubResource( 29 ), "Walk", "Idle", SubResource( 30 ) ]
+start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
@@ -274,7 +275,7 @@ hitbox = NodePath("HitBox")
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
 hframes = 17
-frame = 13
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

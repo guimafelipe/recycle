@@ -4,6 +4,9 @@ class_name Amdre
 export(Resource) var player_state = player_state as PlayerState
 export(NodePath) onready var hitbox = get_node(hitbox) as Area2D
 
+onready var animationTree = $AnimationTree
+onready var animationState = animationTree.get("parameters/playback")
+
 var to_interact = null
 
 var velocity : Vector2 = Vector2(0,0)
@@ -33,8 +36,12 @@ func move(delta : float) -> void:
 	var input_vector = Vector2(dx, dy).normalized()
 	
 	if input_vector != Vector2.ZERO:
+		animationTree.set("parameters/Idle/blend_position", input_vector)
+		animationTree.set("parameters/Walk/blend_position", input_vector)
+		animationState.travel("Walk")
 		velocity = velocity.move_toward(input_vector * player_state.MAX_SPEED, player_state.ACCELERATION * delta)
 	else:
+		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, player_state.FRICTION*delta)
 	
 	velocity = move_and_slide(velocity)
