@@ -62,9 +62,8 @@ func _physics_process(delta : float):
 func take_damage(dano : int):
 	hp -= dano
 	hp = max(0, hp)
-	print(hp)
 	if hp <= 0:
-		call_deferred("die")
+		die()
 
 
 func die():
@@ -118,7 +117,7 @@ func _on_Visao_body_exited(body : Amdre):
 	if not body:
 		return
 	player = null
-	print("oi")
+	
 	if state == States.SEGUINDO:
 		state = States.IDLE
 
@@ -140,7 +139,6 @@ func _on_Ataque_body_exited(body : Amdre):
 
 
 func _on_BouncingTimer_timeout() -> void:
-	print("timer over")
 	rescan()
 
 
@@ -151,6 +149,10 @@ func rescan() -> void:
 	state = States.RECUPERANDO
 	$RecuperandoTimer.start(cooldown_ataque)
 	yield($RecuperandoTimer, "timeout")
+	
+	if state == States.MORTO:
+		return
+	
 	if not player:
 		state = States.IDLE
 	elif $Ataque.overlaps_body(player):

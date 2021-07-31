@@ -73,5 +73,6 @@ func attack():
 	for body in bodies:
 		body = body as PhysicsBody2D
 		if body.is_in_group("Enemy"):
+			print("bati")
 			body.take_damage(player_state.dano)
 

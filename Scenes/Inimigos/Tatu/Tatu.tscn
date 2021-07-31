@@ -44,6 +44,7 @@ one_shot = true
 
 [node name="RecuperandoTimer" type="Timer" parent="."]
 one_shot = true
+
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]
 [connection signal="body_entered" from="Ataque" to="." method="_on_Ataque_body_entered"]

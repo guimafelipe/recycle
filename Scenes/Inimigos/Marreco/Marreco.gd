@@ -70,8 +70,9 @@ func _physics_process(delta : float):
 func take_damage(dano : int):
 	hp -= dano
 	hp = max(0, hp)
+	print(hp)
 	if hp <= 0:
-		call_deferred("die")
+		die()
 
 
 func die():
@@ -98,6 +99,7 @@ func atira() -> void:
 func atacando(delta : float) -> void:
 	velocity = global_position.direction_to(alvo)*ataque_speed
 	var res := move_and_collide(velocity*delta)
+
 	if res:
 		if res.collider is Amdre:
 			var body = res.collider as Amdre
@@ -121,12 +123,17 @@ func morto():
 
 
 func rescan() -> void:
+	print(state)
 	if state == States.MORTO:
 		return
 	
 	state = States.RECUPERANDO
 	$RecuperandoTimer.start(cooldown_ataque)
 	yield($RecuperandoTimer, "timeout")
+	
+	if state == States.MORTO:
+		return
+	
 	if not player:
 		state = States.IDLE
 	elif $Melee.overlaps_body(player):

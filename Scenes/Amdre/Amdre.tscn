@@ -29,16 +29,16 @@ resource_name = "Death"
 [sub_resource type="Animation" id=8]
 resource_name = "Hurt"
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=9]
 resource_name = "IdleDown"
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=10]
 resource_name = "IdleLeft"
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=11]
 resource_name = "IdleRight"
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=12]
 resource_name = "IdleUp"
 length = 0.1
 loop = true
@@ -55,8 +55,7 @@ tracks/0/keys = {
 "values": [ 5 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "WalkDown"
+[sub_resource type="Animation" id=13]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -72,10 +71,9 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "WalkLeft"
+[sub_resource type="Animation" id=14]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=15]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -91,8 +89,7 @@ tracks/0/keys = {
 "values": [ 9, 10, 11, 12, 13, 14, 15, 16 ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "WalkUp"
+[sub_resource type="Animation" id=16]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -108,34 +105,34 @@ tracks/0/keys = {
 "values": [ 4, 5, 6, 7 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "IdleLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "IdleRight"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=19]
 animation = "IdleDown"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=20]
 animation = "IdleUp"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=23]
-blend_point_0/node = SubResource( 19 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=21]
+blend_point_0/node = SubResource( 17 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 20 )
+blend_point_1/node = SubResource( 18 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 21 )
+blend_point_2/node = SubResource( 19 )
 blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 22 )
+blend_point_3/node = SubResource( 20 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachine" id=13]
-states/Idle/node = SubResource( 23 )
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/Idle/node = SubResource( 21 )
 states/Idle/position = Vector2( 104, 67 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
 [node name="Amdre" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -149,7 +146,6 @@ hframes = 17
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -161,7 +157,6 @@ limit_right = 1800
 limit_bottom = 1200
 
 [node name="HitBox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2( 41.2724, -43.6535 )
@@ -174,17 +169,17 @@ anims/AttackRight = SubResource( 5 )
 anims/AttackUp = SubResource( 6 )
 anims/Death = SubResource( 7 )
 anims/Hurt = SubResource( 8 )
-anims/IdleDown = SubResource( 15 )
-anims/IdleLeft = SubResource( 16 )
-anims/IdleRight = SubResource( 17 )
-anims/IdleUp = SubResource( 18 )
-anims/WalkDown = SubResource( 9 )
-anims/WalkLeft = SubResource( 10 )
-anims/WalkRight = SubResource( 11 )
-anims/WalkUp = SubResource( 12 )
+anims/IdleDown = SubResource( 9 )
+anims/IdleLeft = SubResource( 10 )
+anims/IdleRight = SubResource( 11 )
+anims/IdleUp = SubResource( 12 )
+anims/WalkDown = SubResource( 13 )
+anims/WalkLeft = SubResource( 14 )
+anims/WalkRight = SubResource( 15 )
+anims/WalkUp = SubResource( 16 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 13 )
+tree_root = SubResource( 22 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 14 )
+parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = Vector2( 0, 0.0289018 )
