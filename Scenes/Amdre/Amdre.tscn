@@ -76,7 +76,7 @@ tracks/0/keys = {
 resource_name = "WalkLeft"
 
 [sub_resource type="Animation" id=11]
-length = 0.7
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -85,10 +85,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 8, 8, 9, 10, 11, 12 ]
+"values": [ 9, 10, 11, 12, 13, 14, 15, 16 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -145,7 +145,7 @@ hitbox = NodePath("HitBox")
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
-hframes = 13
+hframes = 17
 frame = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -187,4 +187,4 @@ anims/WalkUp = SubResource( 12 )
 tree_root = SubResource( 13 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 14 )
-parameters/Idle/blend_position = Vector2( -0.0428135, -0.637931 )
+parameters/Idle/blend_position = Vector2( 0, 0.0289018 )
