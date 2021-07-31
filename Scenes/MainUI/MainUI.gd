@@ -10,6 +10,8 @@ func _ready():
 	Events.connect("recurso_changed", self, "update_ui")
 	Events.connect("items_changed", self, "update_ui")
 	Events.connect("hp_changed", self, "update_hp")
+	Events.connect("can_interact", self, "show_interact_label")
+	Events.connect("cannot_interact", self, "hide_interact_label")
 	update_ui()
 	update_hp()
 
@@ -32,3 +34,9 @@ func update_hp():
 	barra.value = hp
 	barra.max_value = player_state.max_hp
 	label.text = str(hp)
+
+func show_interact_label():
+	$Popup.visible = true
+
+func hide_interact_label():
+	$Popup.visible = false

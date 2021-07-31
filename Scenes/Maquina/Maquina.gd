@@ -26,12 +26,14 @@ func _input(event : InputEvent):
 
 func interact() -> void:
 	player_state.game_state = Enums.GameState.MAQUINA
+	Events.emit_signal("cannot_interact")
 	update_ui()
 	$UI/UIMaquina.visible = true
 
 
 func finish_interact() -> void:
 	player_state.game_state = Enums.GameState.FREE
+	Events.emit_signal("can_interact")
 	$UI/UIMaquina.visible = false
 
 
