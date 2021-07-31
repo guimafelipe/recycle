@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character/mc.png" type="Texture" id=2]
@@ -11,17 +11,52 @@ height = 36.056
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 14.7449, 37.3417 )
 
+[sub_resource type="Animation" id=6]
+resource_name = "AttackDown"
+
+[sub_resource type="Animation" id=7]
+resource_name = "AttackLeft"
+
+[sub_resource type="Animation" id=8]
+resource_name = "AttackRight"
+
+[sub_resource type="Animation" id=9]
+resource_name = "AttackUp"
+
+[sub_resource type="Animation" id=10]
+resource_name = "Death"
+
+[sub_resource type="Animation" id=11]
+resource_name = "Hurt"
+
+[sub_resource type="Animation" id=12]
+resource_name = "WalkDown"
+
+[sub_resource type="Animation" id=13]
+resource_name = "WalkLeft"
+
+[sub_resource type="Animation" id=3]
+resource_name = "WalkRight"
+length = 5.0
+
+[sub_resource type="Animation" id=14]
+resource_name = "WalkUp"
+
+[sub_resource type="AnimationNodeStateMachine" id=4]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+
 [node name="Amdre" type="KinematicBody2D"]
 script = ExtResource( 1 )
 player_state = ExtResource( 3 )
 hitbox = NodePath("HitBox")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -36,3 +71,21 @@ limit_bottom = 1200
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2( 41.2724, -43.6535 )
 shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/AttackDown = SubResource( 6 )
+anims/AttackLeft = SubResource( 7 )
+anims/AttackRight = SubResource( 8 )
+anims/AttackUp = SubResource( 9 )
+anims/Death = SubResource( 10 )
+anims/Hurt = SubResource( 11 )
+anims/WalkDown = SubResource( 12 )
+anims/WalkLeft = SubResource( 13 )
+anims/WalkRight = SubResource( 3 )
+anims/WalkUp = SubResource( 14 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 4 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 5 )

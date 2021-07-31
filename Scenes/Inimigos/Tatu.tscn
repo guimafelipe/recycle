@@ -18,7 +18,7 @@ radius = 62.1357
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
-range_ataque = 120
+range_ataque = 100
 range_visao = 200
 bouncing_duration = 1.0
 player_state = ExtResource( 3 )
@@ -44,7 +44,6 @@ one_shot = true
 
 [node name="RecuperandoTimer" type="Timer" parent="."]
 one_shot = true
-
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]
 [connection signal="body_entered" from="Ataque" to="." method="_on_Ataque_body_entered"]
