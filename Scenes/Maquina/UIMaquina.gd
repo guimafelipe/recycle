@@ -34,6 +34,9 @@ func clear_lists():
 
 func _on_UIMaquina_visibility_changed():
 	$TabContainer.current_tab = 0 # reseta pra craft list
+	reseta_foco()
+
+func reseta_foco():
 	if visible and craft_lista.get_child_count() > 0:
 		craft_lista.get_child(0).grab_focus()
 		var craft_parent = craft_lista.get_parent() as ScrollContainer

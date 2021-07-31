@@ -5,13 +5,14 @@ class_name CraftItemUI
 export(NodePath) onready var nome = get_node(nome) as Label 
 export(NodePath) onready var icon = get_node(icon) as TextureRect
 export(NodePath) onready var description = get_node(description) as Label
-export(NodePath) onready var qnt_papel = get_node(qnt_papel) as Label
-export(NodePath) onready var qnt_plastico = get_node(qnt_plastico) as Label
-export(NodePath) onready var qnt_metal = get_node(qnt_metal) as Label
-export(NodePath) onready var qnt_vidro = get_node(qnt_vidro) as Label
+
 
 export(Resource) var item = item as Item
 export(Resource) var player_state = player_state as PlayerState
+export(Array, Resource) var recursos
+
+var alfa := 1.0
+
 
 func _ready():
 	set_focus_mode(FOCUS_ALL)
@@ -19,10 +20,16 @@ func _ready():
 		nome.text = item.nome
 		icon.texture = item.textura
 		description.text = item.descricao
-		qnt_papel.text = str(item.recursos[Enums.RecursoTipo.PAPEL])
-		qnt_plastico.text = str(item.recursos[Enums.RecursoTipo.PLASTICO])
-		qnt_metal.text = str(item.recursos[Enums.RecursoTipo.METAL])
-		qnt_vidro.text = str(item.recursos[Enums.RecursoTipo.VIDRO])
+		for i in range(4):
+			var ui = $Content/Recursos.get_child(i) as HBoxContainer
+			var label = ui.get_child(1) as Label
+			var icon = ui.get_child(0) as TextureRect
+			label.text = str(item.recursos[i])
+			icon.texture = recursos[i].textura
+		
+		if not item.can_craft(player_state):
+			alfa = 0.3
+			
 
 
 func _input(event):
@@ -40,15 +47,15 @@ func for_item(_item : Item):
 
 
 func _on_CraftItemUI_focus_entered():
-	modulate = Color(1,0,0)
+	modulate = Color(1,0,0, alfa)
 
 
 func _on_CraftItemUI_focus_exited():
-	modulate = Color(1,1,1)
+	modulate = Color(1,1,1, alfa)
 
 
 func _on_CraftItemUI_mouse_entered():
-	modulate = Color(1, 0, 0)
+	modulate = Color(1, 0, 0, alfa)
 
 
 func _on_CraftItemUI_mouse_exited():
