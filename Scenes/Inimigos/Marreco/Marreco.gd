@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Inimigo
 
 enum States{
 	IDLE,
@@ -10,8 +10,6 @@ enum States{
 	RECUPERANDO
 }
 
-export(int) var hp = 10
-export(int) var max_hp = 20
 export(int) var atk_dmg = 13
 
 export(int) var speed = 100
@@ -28,14 +26,11 @@ export(float) var cooldown_tiro = 1.0
 export(int) var dano_tiro = 5
 
 export(PackedScene) var bullet_scene
-export(Resource) var player_state = player_state as PlayerState
 
-signal hp_update(value)
 
 var alvo : Vector2
 var velocity := Vector2(0,0)
 var state = States.IDLE
-var player : Amdre
 var bouncing_from : Vector2
 
 
@@ -71,16 +66,9 @@ func _physics_process(delta : float):
 		morto()
 
 
-func take_damage(dano : int):
-	hp -= dano
-	hp = max(0, hp)
-	emit_signal("hp_update", hp)
-	if hp <= 0:
-		die()
-
-
 func die():
 	state = States.MORTO
+	.die()
 
 
 func idle() -> void:

@@ -6,6 +6,8 @@ export(NodePath) onready var armas = get_node(armas) as HBoxContainer
 export(NodePath) onready var vida = get_node(vida) as HBoxContainer
 export(Texture) var textura_padrao_arma
 
+export(Array, Resource) var recursos_res
+
 func _ready():
 	Events.connect("recurso_changed", self, "update_ui")
 	Events.connect("items_changed", self, "update_ui_armas")
@@ -19,6 +21,9 @@ func _ready():
 
 func update_ui() -> void:
 	for i in range(4): #passando por todos os recursos
+		var icon = recursos.get_child(2*i) as TextureRect
+		var rec_res = recursos_res[i] as Recurso
+		icon.texture = rec_res.textura
 		var label = recursos.get_child(2*i + 1) as Label
 		if label:
 			label.text = str(player_state.recursos[i])

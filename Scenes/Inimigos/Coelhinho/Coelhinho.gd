@@ -22,6 +22,8 @@ func _ready():
 
 func die():
 	state = States.MORTO
+	$RecursoSpawner.drop()
+	queue_free()
 
 func execute():
 	$SpawnTimer.start()

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/MainUI/MainUI.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
 [ext_resource path="res://tatu.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Papel.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/Vidro.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/Plastico.tres" type="Resource" id=7]
+[ext_resource path="res://Resources/Metal.tres" type="Resource" id=8]
 
 [node name="MainUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -12,6 +16,7 @@ recursos = NodePath("Margin/Recursos")
 armas = NodePath("Margin/Armas")
 vida = NodePath("Margin/Vida")
 textura_padrao_arma = ExtResource( 4 )
+recursos_res = [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ) ]
 
 [node name="Margin" type="Control" parent="."]
 anchor_right = 1.0
