@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/Inimigos/Tatu.gd" type="Script" id=1]
-[ext_resource path="res://Art/Enemies/tatu.png" type="Texture" id=2]
-[ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
+[ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=1]
+[ext_resource path="res://Scenes/Inimigos/Tatu/Tatu.gd" type="Script" id=2]
+[ext_resource path="res://Art/Enemies/tatu.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 22.7352
@@ -17,17 +17,17 @@ radius = 62.1357
 "Enemy",
 ]]
 collision_layer = 2
-script = ExtResource( 1 )
-range_ataque = 100
+script = ExtResource( 2 )
+range_ataque = 120
 range_visao = 200
 bouncing_duration = 1.0
-player_state = ExtResource( 3 )
+player_state = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Visao" type="Area2D" parent="."]
 
@@ -44,6 +44,7 @@ one_shot = true
 
 [node name="RecuperandoTimer" type="Timer" parent="."]
 one_shot = true
+
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]
 [connection signal="body_entered" from="Ataque" to="." method="_on_Ataque_body_entered"]
