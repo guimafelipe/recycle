@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=1]
 [ext_resource path="res://Scenes/Inimigos/Tatu/Tatu.gd" type="Script" id=2]
 [ext_resource path="res://Art/Enemies/tatu.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Inimigos/BarraHP.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 22.7352
@@ -44,6 +45,13 @@ one_shot = true
 
 [node name="RecuperandoTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="BarraHP" parent="." instance=ExtResource( 4 )]
+margin_left = -32.0
+margin_top = -162.0
+margin_right = 32.0
+margin_bottom = -98.0
+value = 50.0
 
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]

@@ -9,7 +9,7 @@ textura = ExtResource( 2 )
 nome = "Expada do Rei Desnutrido"
 descricao = "O Rei desnutrido não conseguia mais carregar sua espada."
 id = 0
-tipo = 0
+tipo = 2
 recursos = {
 0: 0,
 1: 2,

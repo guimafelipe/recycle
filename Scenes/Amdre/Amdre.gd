@@ -25,6 +25,8 @@ func _input(event : InputEvent):
 			call_deferred("interact")
 		if event.is_action_pressed("attack"):
 			attack()
+		if event.is_action_pressed("usar_item"):
+			usa_item()
 
 
 func move(delta : float) -> void:
@@ -73,6 +75,10 @@ func attack():
 	for body in bodies:
 		body = body as PhysicsBody2D
 		if body.is_in_group("Enemy"):
-			print("bati")
 			body.take_damage(player_state.dano)
+
+func usa_item():
+	if player_state.tem_armadilha:
+		# spawna armadilha
+		pass
 

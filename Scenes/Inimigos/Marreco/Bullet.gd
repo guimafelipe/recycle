@@ -18,6 +18,7 @@ func set_alvo(_alvo : Vector2, _origin : Vector2) -> void:
 
 
 func _ready():
+	$LifeTime.wait_time = lifetime
 	$LifeTime.start()
 
 

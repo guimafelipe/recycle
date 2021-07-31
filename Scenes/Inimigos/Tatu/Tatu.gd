@@ -26,6 +26,8 @@ export(float) var bouncing_duration = 0.25
 
 export(Resource) var player_state = player_state as PlayerState
 
+signal hp_update(value)
+
 var alvo : Vector2
 var velocity := Vector2(0,0)
 var state = States.IDLE
@@ -36,6 +38,9 @@ func _ready():
 	$Visao/CollisionShape2D.shape.radius = range_visao
 	$Ataque/CollisionShape2D.shape.radius = range_ataque
 	$BouncingTimer.wait_time = bouncing_duration
+	$BarraHP.setup_max_val(max_hp)
+	connect("hp_update", $BarraHP, "on_update_hp")
+	emit_signal("hp_update", hp)
 
 
 func _physics_process(delta : float):
@@ -62,6 +67,7 @@ func _physics_process(delta : float):
 func take_damage(dano : int):
 	hp -= dano
 	hp = max(0, hp)
+	emit_signal("hp_update", hp)
 	if hp <= 0:
 		die()
 

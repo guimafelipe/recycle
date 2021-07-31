@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/Amdre/Amdre.gd"
 }, {
+"base": "Area2D",
+"class": "Armadilha",
+"language": "GDScript",
+"path": "res://Scenes/Items/Armadilha/Armadilha.gd"
+}, {
 "base": "ItemImplementation",
 "class": "BaldinhoImp",
 "language": "GDScript",
 "path": "res://Items/Baldinho/BaldinhoImp.gd"
+}, {
+"base": "TextureProgress",
+"class": "BarraHP",
+"language": "GDScript",
+"path": "res://Scenes/Inimigos/BarraHP.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Bullet",
@@ -66,7 +76,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Amdre": "",
+"Armadilha": "",
 "BaldinhoImp": "",
+"BarraHP": "",
 "Bullet": "",
 "CraftItemUI": "",
 "Dialogue": "",
@@ -153,6 +165,11 @@ interact={
 attack={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+usar_item={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
  ]
 }
 

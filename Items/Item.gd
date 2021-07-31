@@ -35,6 +35,12 @@ func craft(player_state : PlayerState) -> void:
 	
 	if implementation:
 		implementation.on_craft(player_state)
+	
+	if tipo == Enums.Tipo.DIREITA:
+		player_state.tem_direita = true
+	
+	if tipo == Enums.Tipo.ESQUERDA:
+		player_state.tem_esquerda = true
 
 
 func do_recycle(player_state : PlayerState) -> void:
@@ -45,6 +51,12 @@ func do_recycle(player_state : PlayerState) -> void:
 
 	if implementation:
 		implementation.on_recycle(player_state)
+	
+	if tipo == Enums.Tipo.DIREITA:
+		player_state.tem_direita = false
+	
+	if tipo == Enums.Tipo.ESQUERDA:
+		player_state.tem_esquerda = false
 
 
 func can_craft(player_state : PlayerState) -> bool:
@@ -56,4 +68,11 @@ func can_craft(player_state : PlayerState) -> bool:
 		return false
 	if player_state.recursos[Enums.RecursoTipo.VIDRO] < recursos[Enums.RecursoTipo.VIDRO]:
 		return false
+	
+	if tipo == Enums.Tipo.DIREITA and player_state.tem_direita:
+		return false
+	
+	if tipo == Enums.Tipo.ESQUERDA and player_state.tem_esquerda:
+		return false
+	
 	return true
