@@ -1,4 +1,5 @@
 extends Area2D
+class_name Coelhinho
 
 enum States{
 	NATOCA,
@@ -40,7 +41,3 @@ func execute():
 	yield($SpawnTimer, "timeout")
 	queue_free()
 
-
-func _on_Coelhinho_area_entered(area : Armadilha):
-	if area:
-		die()

@@ -22,6 +22,8 @@ export(float) var FRICTION = 500
 
 export(bool) var tem_baldinho = false
 export(bool) var tem_vara = false
+export(bool) var tem_armadilha = false
+export(float) var armadilha_cooldown = 5.0
 
 export(bool) var tem_esquerda := false
 export(bool) var tem_direita := false
