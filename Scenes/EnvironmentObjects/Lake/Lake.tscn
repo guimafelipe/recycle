@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Art/Environment/lake1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/EnvironmentObjects/Lake/Lake.gd" type="Script" id=2]
+[ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
+[ext_resource path="res://Dialogues/RioSemVara.tres" type="Resource" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 355.0
@@ -9,6 +12,9 @@ radius = 355.0
 extents = Vector2( 280, 150 )
 
 [node name="Lake" type="Node2D"]
+script = ExtResource( 2 )
+player_state = ExtResource( 3 )
+dialog = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -22,3 +28,6 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

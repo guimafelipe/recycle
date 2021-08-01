@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/EnvironmentObjects/YellowTree.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/EnvironmentObjects/PinkTree.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Maquina/Maquina.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/EnvironmentObjects/Lake.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/EnvironmentObjects/Lake/Lake.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1800, 10 )
