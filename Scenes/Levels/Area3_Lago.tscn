@@ -1,0 +1,159 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/Inimigos/Marreco/Marreco.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/EnvironmentObjects/PinkTree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/EnvironmentObjects/Lake/Lake.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/EnvironmentObjects/GreenTree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/EnvironmentObjects/YellowTree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/Backgrounds/area three.png" type="Texture" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 859.392
+height = 1260.98
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 725.908
+height = 1132.83
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1800, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1800, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 1200 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10, 1200 )
+
+[node name="Area3_Lago" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+
+[node name="Lakes" type="Node2D" parent="."]
+
+[node name="Lake" parent="Lakes" instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="Lakes/Lake/Area2D" index="0"]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="Lakes/Lake" index="1"]
+texture = null
+
+[node name="CollisionShape2D" parent="Lakes/Lake/StaticBody2D" index="0"]
+position = Vector2( 32.0364, -32.0362 )
+shape = SubResource( 2 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 0, -1200 )
+shape = SubResource( 3 )
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 0, 1200 )
+shape = SubResource( 4 )
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1800, 0 )
+shape = SubResource( 5 )
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2( -1800, 0 )
+shape = SubResource( 6 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="EnvironmentObjects" type="YSort" parent="YSort"]
+
+[node name="Trees" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="GreenTree" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( -1099.91, -913.031 )
+
+[node name="PinkTree" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 2 )]
+position = Vector2( -1260.09, -880.994 )
+
+[node name="YellowTree" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( -1489.68, -859.637 )
+
+[node name="GreenTree7" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( -1402.63, -771.76 )
+
+[node name="PinkTree7" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 2 )]
+position = Vector2( -1737.72, -921.357 )
+
+[node name="YellowTree7" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( -1671.32, -671.276 )
+
+[node name="GreenTree2" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( -539.275, -822.378 )
+
+[node name="PinkTree2" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 2 )]
+position = Vector2( -733.092, -864.341 )
+
+[node name="YellowTree2" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( -935.776, -829.529 )
+
+[node name="GreenTree3" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( -13.2426, -835.832 )
+
+[node name="PinkTree3" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 2 )]
+position = Vector2( -166.696, -763.433 )
+
+[node name="YellowTree3" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( -369.38, -735.348 )
+
+[node name="GreenTree4" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 615.521, -765.033 )
+
+[node name="PinkTree4" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 2 )]
+position = Vector2( 421.704, -793.541 )
+
+[node name="YellowTree4" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( 192.112, -772.184 )
+
+[node name="GreenTree5" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1142.52, -889.65 )
+
+[node name="PinkTree5" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 2 )]
+position = Vector2( 982.337, -857.614 )
+
+[node name="YellowTree5" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( 799.834, -742.076 )
+
+[node name="GreenTree6" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1655.1, -889.65 )
+
+[node name="PinkTree6" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 2 )]
+position = Vector2( 1494.92, -857.614 )
+
+[node name="YellowTree6" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( 1265.32, -836.256 )
+
+[node name="Rocks" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="Frutas" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="Marreco" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 105.752, 383.911 )
+
+[node name="Marreco2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -742.248, 320.11 )
+
+[node name="Marreco3" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 855.164, 426.789 )
+
+[node name="Marreco4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -1044.81, 131.298 )
+
+[node name="Marreco5" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 993.52, -353.059 )
+
+[node name="Marreco6" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( -479.731, -406.876 )
+
+[editable path="Lakes/Lake"]

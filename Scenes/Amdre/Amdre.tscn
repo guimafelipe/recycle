@@ -11,8 +11,9 @@
 radius = 25.2769
 height = 36.056
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14.7449, 37.3417 )
+[sub_resource type="CapsuleShape2D" id=30]
+radius = 91.0027
+height = 0.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackDown"
@@ -115,6 +116,18 @@ tracks/7/keys = {
 "args": [  ],
 "method": "attack_animation_finished"
 } ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 235.285, 19.857 ), Vector2( 235.285, 19.857 ), Vector2( 235.285, 19.857 ), Vector2( 235.285, 19.857 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -219,6 +232,30 @@ tracks/7/keys = {
 "method": "attack_animation_finished"
 } ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("HitBox:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -232, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 156, -33 ), Vector2( 156, -33 ), Vector2( 156, -33 ), Vector2( 156, -33 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "AttackRight"
@@ -310,6 +347,30 @@ tracks/6/keys = {
 "method": "attack_animation_finished"
 } ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 310.795, -34.8878 ), Vector2( 310.795, -34.8878 ), Vector2( 310.795, -34.8878 ), Vector2( 310.795, -34.8878 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, false, false, false ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "AttackUp"
@@ -400,6 +461,18 @@ tracks/6/keys = {
 "args": [  ],
 "method": "attack_animation_finished"
 } ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("HitBox/CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 233.398, -66.9795 ), Vector2( 233.398, -66.979 ), Vector2( 233.398, -66.979 ), Vector2( 233.398, -66.979 ), Vector2( 233.398, -66.9795 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -1105,21 +1178,20 @@ bullet = ExtResource( 5 )
 armadilha = ExtResource( 6 )
 
 [node name="Slash" type="Sprite" parent="."]
-visible = false
-position = Vector2( -39.5015, -18.116 )
+position = Vector2( 88.6039, 7.75627 )
 z_index = 1
 texture = ExtResource( 6 )
 hframes = 16
-frame = 3
+frame = 7
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
-flip_h = true
 hframes = 17
-frame = 12
+frame = 8
 
 [node name="Arma" type="Sprite" parent="."]
+visible = false
 position = Vector2( -40.7251, -37.7347 )
 rotation = -6.58987
 texture = ExtResource( 4 )
@@ -1136,10 +1208,12 @@ limit_right = 1800
 limit_bottom = 1200
 
 [node name="HitBox" type="Area2D" parent="."]
+position = Vector2( -232, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( 91.8542, -31.9989 )
-shape = SubResource( 2 )
+position = Vector2( 310.795, -34.8878 )
+rotation = 1.5708
+shape = SubResource( 30 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 3 )
@@ -1159,7 +1233,6 @@ anims/WalkUp = SubResource( 15 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 28 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 29 )
 parameters/Attack/blend_position = Vector2( -0.00515461, -0.017069 )
 parameters/Idle/blend_position = Vector2( 0, 0 )

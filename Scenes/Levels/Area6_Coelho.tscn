@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/EnvironmentObjects/PinkTree.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Art/Backgrounds/area_6_coelho.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/EnvironmentObjects/BrownTree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/EnvironmentObjects/GreenTree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/EnvironmentObjects/YellowTree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Inimigos/Coelhinho/Coelhinho.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1800, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1800, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 1200 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 1200 )
+
+[node name="Area6_Coelho" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 0, -1200 )
+shape = SubResource( 1 )
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 0, 1200 )
+shape = SubResource( 2 )
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1800, 0 )
+shape = SubResource( 3 )
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2( -1800, 0 )
+shape = SubResource( 4 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="EnvironmentObjects" type="YSort" parent="YSort"]
+
+[node name="Trees" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="GreenTree" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1546.25, -982.889 )
+
+[node name="PinkTree" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 1 )]
+position = Vector2( 1624.16, -815.079 )
+
+[node name="GreenTree2" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1600.19, -683.228 )
+
+[node name="PinkTree2" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 1 )]
+position = Vector2( 1678.1, -515.417 )
+
+[node name="GreenTree3" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1552.25, -347.607 )
+
+[node name="PinkTree3" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 1 )]
+position = Vector2( 1630.16, -179.797 )
+
+[node name="GreenTree4" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1660.12, 5.99329 )
+
+[node name="PinkTree4" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 1 )]
+position = Vector2( 1738.04, 173.804 )
+
+[node name="GreenTree5" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1576.22, 287.675 )
+
+[node name="PinkTree5" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 1 )]
+position = Vector2( 1654.13, 455.485 )
+
+[node name="GreenTree6" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1618.17, 557.37 )
+
+[node name="PinkTree6" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 1 )]
+position = Vector2( 1696.08, 725.181 )
+
+[node name="GreenTree7" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1546.25, 719.187 )
+
+[node name="PinkTree7" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 1 )]
+position = Vector2( 1624.16, 886.998 )
+
+[node name="GreenTree8" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 4 )]
+position = Vector2( 1498.31, 946.93 )
+
+[node name="PinkTree8" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 1 )]
+position = Vector2( 1576.22, 1114.74 )
+
+[node name="YellowTree" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( -1558.24, -689.221 )
+
+[node name="YellowTree2" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( -1246.59, -1000.87 )
+
+[node name="YellowTree3" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 5 )]
+position = Vector2( -1618.17, -940.937 )
+
+[node name="BrownTree" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 3 )]
+position = Vector2( -1414.4, 1108.75 )
+
+[node name="BrownTree2" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 3 )]
+position = Vector2( -1696.08, 1018.85 )
+
+[node name="BrownTree3" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 3 )]
+position = Vector2( -0.00012207, -11.9865 )
+
+[node name="BrownTree4" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 3 )]
+position = Vector2( 173.804, 59.9323 )
+
+[node name="BrownTree6" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 3 )]
+position = Vector2( -173.804, 59.9323 )
+
+[node name="BrownTree5" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 3 )]
+position = Vector2( -17.9799, 101.885 )
+
+[node name="Rocks" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="Frutas" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="Coelhos" type="YSort" parent="YSort"]
+
+[node name="Coelhinho" parent="YSort/Coelhos" instance=ExtResource( 6 )]
+position = Vector2( -377.573, 449.492 )
+
+[node name="Coelhinho2" parent="YSort/Coelhos" instance=ExtResource( 6 )]
+position = Vector2( 797.099, 599.323 )
+
+[node name="Coelhinho3" parent="YSort/Coelhos" instance=ExtResource( 6 )]
+position = Vector2( 701.208, -365.587 )
+
+[node name="Coelhinho4" parent="YSort/Coelhos" instance=ExtResource( 6 )]
+position = Vector2( 545.384, 65.9256 )
+
+[node name="Coelhinho5" parent="YSort/Coelhos" instance=ExtResource( 6 )]
+position = Vector2( -605.316, -431.512 )
+
+[node name="Coelhinho6" parent="YSort/Coelhos" instance=ExtResource( 6 )]
+position = Vector2( -1060.8, 359.594 )
+
+[node name="Coelhinho7" parent="YSort/Coelhos" instance=ExtResource( 6 )]
+position = Vector2( -677.234, -17.9794 )
+
+[node name="Coelhinho8" parent="YSort/Coelhos" instance=ExtResource( 6 )]
+position = Vector2( 203.77, 581.343 )

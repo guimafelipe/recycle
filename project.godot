@@ -44,11 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/Inimigos/Marreco/Bullet.gd"
 }, {
-"base": "Area2D",
-"class": "Coelhinho",
-"language": "GDScript",
-"path": "res://Scenes/Inimigos/Coelhinho/Coelhinho.gd"
-}, {
 "base": "MarginContainer",
 "class": "CraftItemUI",
 "language": "GDScript",
@@ -112,7 +107,6 @@ _global_script_class_icons={
 "BaldinhoImp": "",
 "BarraHP": "",
 "Bullet": "",
-"Coelhinho": "",
 "CraftItemUI": "",
 "Dialogue": "",
 "EspadaImp": "",

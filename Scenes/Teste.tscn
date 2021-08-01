@@ -24,13 +24,16 @@
 position = Vector2( 801.829, 233.27 )
 
 [node name="Papel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 314.98, 107.093 )
+position = Vector2( 727.937, 694.248 )
+texture = null
 
 [node name="Papel2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 214.187, 311.201 )
+position = Vector2( 170.187, 351.201 )
+texture = null
 
 [node name="Papel3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 591.681, 212.559 )
+texture = null
 
 [node name="Maquina" parent="." instance=ExtResource( 3 )]
 position = Vector2( 69.5927, 154.9 )

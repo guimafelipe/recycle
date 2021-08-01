@@ -1,27 +1,32 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Inimigos/Caranguejo/Caranguejo.gd" type="Script" id=1]
-[ext_resource path="res://tatu.png" type="Texture" id=2]
+[ext_resource path="res://Art/Enemies/caranguejo.png" type="Texture" id=2]
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
 [ext_resource path="res://Scenes/Inimigos/BarraHP.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Inimigos/RecursoSpawner/RecursoSpawner.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
+radius = 42.1661
+height = 119.865
 
 [node name="Caranguejo" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 collision_layer = 2
 script = ExtResource( 1 )
+hp = 30
+max_hp = 30
 player_state = ExtResource( 3 )
 ataque_range = 150
 range_visao = 150
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 29.217 )
+rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.338355, 0.260198 )
 texture = ExtResource( 2 )
 
 [node name="WalkTimer" type="Timer" parent="."]
@@ -29,7 +34,7 @@ autostart = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 0, -85 )
+cast_to = Vector2( 0, -160 )
 
 [node name="BarraHP" parent="." instance=ExtResource( 4 )]
 margin_left = -31.7839
@@ -39,5 +44,4 @@ margin_bottom = -18.1084
 
 [node name="RecursoSpawner" parent="." instance=ExtResource( 5 )]
 drop_rates = [ Vector2( 0, 0 ), Vector2( 1, 3 ), Vector2( 0.6, 2 ), Vector2( 0, 0 ) ]
-
 [connection signal="timeout" from="WalkTimer" to="." method="_on_WalkTimer_timeout"]
