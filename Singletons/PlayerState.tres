@@ -5,17 +5,17 @@
 [resource]
 script = ExtResource( 1 )
 items_disponiveis = {
-Resource( "res://Items/Bussola.tres" ): false,
-Resource( "res://Items/Mapa.tres" ): false,
-Resource( "res://Items/PegadorDeFrutas.tres" ): false,
-Resource( "res://Items/Estilingue.tres" ): false,
-Resource( "res://Items/RedeDeArremesso.tres" ): false,
 Resource( "res://Items/Ponte.tres" ): false,
-Resource( "res://Items/EspadaDoReiDesnutrido.tres" ): false,
 Resource( "res://Items/Baldinho/Baldinho.tres" ): false,
-Resource( "res://Items/Oculos.tres" ): true,
+Resource( "res://Items/RedeDeArremesso.tres" ): false,
+Resource( "res://Items/Estilingue.tres" ): false,
 Resource( "res://Items/Manopla.tres" ): false,
-Resource( "res://Items/SapatosDeCorrida.tres" ): false
+Resource( "res://Items/Bussola.tres" ): false,
+Resource( "res://Items/PegadorDeFrutas.tres" ): false,
+Resource( "res://Items/Mapa.tres" ): false,
+Resource( "res://Items/SapatosDeCorrida.tres" ): false,
+Resource( "res://Items/EspadaDoReiDesnutrido.tres" ): false,
+Resource( "res://Items/Oculos.tres" ): true
 }
 recursos = {
 0: 5,
@@ -30,3 +30,10 @@ MAX_SPEED = 300.0
 ACCELERATION = 400.0
 FRICTION = 500.0
 tem_baldinho = false
+tem_vara = false
+tem_esquerda = false
+tem_direita = false
+can_melee_attack = false
+can_ranged_attack = false
+attack_cooldown = 1.0
+bullet_speed = 850
