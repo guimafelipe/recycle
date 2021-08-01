@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Dialogues/Dialogue.gd" type="Script" id=1]
+[ext_resource path="res://Art/Enemies/boss_after.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+falas = [ "Tarúncio:
+Obrigada, filha de Tarúncio.", "Eu criei você para purgar esta ilha dos detritos dos humanos.
+", "Foi meu último ato desesperado antes de enlouquecer. Mas agora você me libertou.
+", "Os humanos não respeitam o ciclo da matéria. 
+E com a matéria acumulada, a energia fica estagnada.
+", "A perturbação causada pelos detritos cria formas de vida terríveis fora do controle dos deuses.", "O caos se instaura e nós perdemos o contato com nossas criações.", "Devo lhe enviar em mais uma missão.", "Há outras ilhas neste arquipélago, governadas por outros deuses, meus irmãos.
+", "Você deve construir uma jangada e partir para a próxima ilha. Estoquei recursos o suficiente para garantir que siga em frente e repita o ciclo.
+", "Por favor, continue movimentando entre diferentes formas a matéria que encontrar em sua jornada.", "", "" ]
+textura = ExtResource( 2 )

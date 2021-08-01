@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Inimigos/Boss/Boss.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/MainUI/MainUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Amdre/Amdre.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/Backgrounds/area1_boss.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Maquina/Maquina.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1800, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1800, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 1200 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 1200 )
+
+[node name="Area1_Boss" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 0, -1200 )
+shape = SubResource( 1 )
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 0, 1200 )
+shape = SubResource( 2 )
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1800, 0 )
+shape = SubResource( 3 )
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2( -1800, 0 )
+shape = SubResource( 4 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="EnvironmentObjects" type="YSort" parent="YSort"]
+
+[node name="Rocks" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="Boss" parent="YSort/EnvironmentObjects" instance=ExtResource( 1 )]
+max_hp = 100
+
+[node name="MainUI" parent="." instance=ExtResource( 2 )]
+
+[node name="Amdre" parent="." instance=ExtResource( 3 )]
+position = Vector2( 709.793, 75.5099 )
+
+[node name="Maquina" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1087.34, 15.102 )

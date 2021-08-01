@@ -27,6 +27,8 @@ export(float) var bouncing_duration = 2.0
 
 export(PackedScene) var bullet_scene
 
+export(Resource) var dialogo = dialogo as Dialogue
+
 var bouncing_from : Vector2
 var velocity := Vector2.ZERO
 var state
@@ -177,6 +179,9 @@ func rescan() -> void:
 	elif $RangeAtirar.overlaps_body(player):
 		state = States.RANGED
 
+
+func die():
+	Events.emit_signal("start_dialog", dialogo)
 
 func _on_BouncingTimer_timeout():
 	rescan()
