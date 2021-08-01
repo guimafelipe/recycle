@@ -28,6 +28,7 @@ func _ready():
 	mira = Mira.DOWN
 	state = State.ANDANDO
 	animationTree.active = true
+	Events.connect("items_changed", self, "on_items_changed")
 	pass
 
 
@@ -154,3 +155,12 @@ func usa_item():
 			arm.global_position = global_position
 			get_tree().root.add_child(arm)
 			$ArmadilhaCooldown.start(player_state.armadilha_cooldown)
+
+
+func on_items_changed():
+	$Arma.texture = null
+	for _item in player_state.items_disponiveis:
+		var item = _item as Item
+		if item.tipo == Enums.Tipo.DIREITA and player_state.items_disponiveis[item]:
+			$Arma.texture = item.textura
+			pass
