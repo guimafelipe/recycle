@@ -1310,20 +1310,20 @@ bullet = ExtResource( 5 )
 armadilha = ExtResource( 6 )
 
 [node name="Slash" type="Sprite" parent="."]
-visible = false
-position = Vector2( -42.9961, 13.7169 )
+position = Vector2( -1.79267, 2.47963 )
 z_index = 1
 texture = ExtResource( 6 )
 hframes = 16
-frame = 15
+frame = 12
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
 hframes = 17
-frame = 7
+frame = 1
 
 [node name="Arma" type="Sprite" parent="."]
+visible = false
 position = Vector2( 82.1346, -48.3198 )
 rotation = -5.8678
 texture = ExtResource( 4 )
@@ -1375,3 +1375,5 @@ one_shot = true
 
 [node name="ArmadilhaCooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
