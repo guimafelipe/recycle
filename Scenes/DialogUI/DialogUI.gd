@@ -38,5 +38,6 @@ func _input(event : InputEvent):
 		if curr_index >= dialogue.falas.size():
 			player_state.game_state = Enums.GameState.FREE
 			$Base.visible = false
+			Events.emit_signal("dialog_ended")
 			return
 		texto.text = dialogue.falas[curr_index]

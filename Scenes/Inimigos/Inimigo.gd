@@ -12,6 +12,8 @@ var player : Amdre
 
 
 func take_damage(dano : int):
+	if hp == 0:
+		return
 	hp -= dano
 	hp = max(0, hp)
 	emit_signal("hp_update", hp)

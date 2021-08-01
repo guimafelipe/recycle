@@ -39,6 +39,8 @@ func _ready():
 	$RangeSeguir/CollisionShape2D.shape.radius = range_seguir
 	$RangeAtirar/CollisionShape2D.shape.radius = range_tiro
 	state = States.IDLE
+	connect("hp_update", $BarraHP, "on_update_hp")
+	emit_signal("hp_update", hp)
 
 
 func _physics_process(delta : float):
@@ -182,6 +184,10 @@ func rescan() -> void:
 
 func die():
 	Events.emit_signal("start_dialog", dialogo)
+	state = States.MORTO
+	print("opa")
+	yield(Events, "dialog_ended")
+	.die()
 
 func _on_BouncingTimer_timeout():
 	rescan()
