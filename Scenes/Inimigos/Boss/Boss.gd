@@ -29,6 +29,10 @@ export(PackedScene) var bullet_scene
 
 export(Resource) var dialogo = dialogo as Dialogue
 
+export(Texture) var text_idle
+export(Texture) var text_melee
+export(Texture) var text_ranged
+
 var bouncing_from : Vector2
 var velocity := Vector2.ZERO
 var state
@@ -185,7 +189,7 @@ func rescan() -> void:
 func die():
 	Events.emit_signal("start_dialog", dialogo)
 	state = States.MORTO
-	print("opa")
+	print("opa boss")
 	yield(Events, "dialog_ended")
 	.die()
 

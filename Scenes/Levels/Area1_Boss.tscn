@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Inimigos/Boss/Boss.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MainUI/MainUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Amdre/Amdre.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/DialogUI/DialogUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Art/Backgrounds/area1_boss.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Maquina/Maquina.tscn" type="PackedScene" id=6]
 
@@ -57,3 +58,5 @@ position = Vector2( 709.793, 75.5099 )
 
 [node name="Maquina" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1087.34, 15.102 )
+
+[node name="DialogUI" parent="." instance=ExtResource( 4 )]

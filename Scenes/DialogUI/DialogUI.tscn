@@ -16,9 +16,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -20.0
+margin_left = -300.0
 margin_top = -40.0
-margin_right = 20.0
+margin_right = 300.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,8 +58,10 @@ __meta__ = {
 
 [node name="VSeparator" type="VSeparator" parent="Base/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
+margin_top = 73.0
 margin_right = 4.0
-margin_bottom = 150.0
+margin_bottom = 76.0
+size_flags_vertical = 4
 
 [node name="Icon" type="TextureRect" parent="Base/HBoxContainer"]
 margin_left = 24.0
@@ -76,17 +80,21 @@ __meta__ = {
 [node name="Texto" type="Label" parent="Base/HBoxContainer"]
 margin_left = 124.0
 margin_top = 59.0
-margin_right = 267.0
+margin_right = 526.0
 margin_bottom = 90.0
+size_flags_horizontal = 3
 text = "Aloo galera de cowboy
 Aloo galera de peao"
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VSeparator2" type="VSeparator" parent="Base/HBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 287.0
-margin_right = 291.0
-margin_bottom = 150.0
+margin_left = 546.0
+margin_top = 73.0
+margin_right = 550.0
+margin_bottom = 76.0
+size_flags_vertical = 4

@@ -1427,17 +1427,17 @@ bullet = ExtResource( 5 )
 armadilha = ExtResource( 6 )
 
 [node name="Slash" type="Sprite" parent="."]
-position = Vector2( -1.79267, 2.47963 )
+position = Vector2( 69.5622, -66.8408 )
 z_index = 1
 texture = ExtResource( 6 )
 hframes = 16
-frame = 12
+frame = 10
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
 hframes = 17
-frame = 1
+frame = 4
 
 [node name="Arma" type="Sprite" parent="."]
 visible = false
@@ -1459,7 +1459,7 @@ limit_bottom = 1200
 position = Vector2( -232, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( 236.464, 56.5322 )
+position = Vector2( 232.9, -91.357 )
 rotation = 1.5708
 shape = SubResource( 2 )
 
