@@ -1,0 +1,177 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Inimigos/Caranguejo/Caranguejo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/EnvironmentObjects/CasteloDeAreia.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/EnvironmentObjects/Rocks/Rock3_small.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/Backgrounds/area7_praia.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/EnvironmentObjects/Rocks/Rock1.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1800, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1800, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 1200 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 1200 )
+
+[node name="Area7_Praia" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 0, -1200 )
+shape = SubResource( 1 )
+
+[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 41.9526, 720.542 )
+shape = SubResource( 2 )
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2( 1800, 0 )
+shape = SubResource( 3 )
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2( -1242.63, 0 )
+shape = SubResource( 4 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="EnvironmentObjects" type="YSort" parent="YSort"]
+
+[node name="Rocks" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="Rock3_small" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -1149.1, 133.865 )
+
+[node name="Rock3_small2" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -1077.36, 84.7834 )
+
+[node name="Rock3_small3" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -975.426, 62.1305 )
+
+[node name="Rock3_small4" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -858.385, 58.355 )
+
+[node name="Rock3_small5" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -763.998, 58.355 )
+
+[node name="Rock3_small6" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -643.182, 84.7835 )
+
+[node name="Rock3_small7" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -556.346, 148.967 )
+
+[node name="Rock3_small17" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -808.458, -626.396 )
+
+[node name="Rock3_small20" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( 599.563, -840.453 )
+
+[node name="Rock3_small21" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( 399.776, -8.00836 )
+
+[node name="Rock3_small22" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( 399.776, -8.00836 )
+
+[node name="Rock3_small8" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -461.958, 269.783 )
+
+[node name="Rock3_small9" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -427.979, 405.701 )
+
+[node name="Rock3_small10" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -424.203, 549.17 )
+
+[node name="Rock3_small11" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -469.509, 632.231 )
+
+[node name="Rock3_small12" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -541.244, 745.495 )
+
+[node name="Rock3_small13" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -628.08, 839.883 )
+
+[node name="Rock3_small14" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -628.08, 839.883 )
+
+[node name="Rock3_small15" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -730.018, 885.189 )
+
+[node name="Rock3_small16" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 3 )]
+position = Vector2( -1217.06, 220.701 )
+
+[node name="Rock1" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1799.17, 166.31 )
+rotation = 1.5708
+
+[node name="Rock13" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1874.99, 393.327 )
+
+[node name="Rock2" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1834.45, 5.03967 )
+rotation = 1.5708
+
+[node name="Rock3" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1859.64, -161.27 )
+
+[node name="Rock4" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1849.56, -297.341 )
+rotation = 1.5708
+
+[node name="Rock5" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1844.52, -448.532 )
+rotation = 1.5708
+
+[node name="Rock6" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1854.6, -564.445 )
+
+[node name="Rock7" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1849.56, -705.556 )
+rotation = 1.5708
+
+[node name="Rock8" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1849.56, -811.389 )
+
+[node name="Rock9" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1849.56, -897.064 )
+rotation = 1.5708
+
+[node name="Rock10" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1849.56, -1023.06 )
+rotation = 1.5708
+
+[node name="Rock11" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1849.56, -1144.01 )
+
+[node name="Rock12" parent="YSort/EnvironmentObjects/Rocks" instance=ExtResource( 5 )]
+position = Vector2( 1849.56, -1144.01 )
+rotation = 1.5708
+
+[node name="Frutas" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="Caranguejos" type="YSort" parent="YSort"]
+
+[node name="Caranguejo" parent="YSort/Caranguejos" instance=ExtResource( 1 )]
+position = Vector2( 743.16, 299.661 )
+
+[node name="Caranguejo2" parent="YSort/Caranguejos" instance=ExtResource( 1 )]
+position = Vector2( 539.39, -221.75 )
+
+[node name="Caranguejo3" parent="YSort/Caranguejos" instance=ExtResource( 1 )]
+position = Vector2( 1012.99, -623.296 )
+
+[node name="Caranguejo4" parent="YSort/Caranguejos" instance=ExtResource( 1 )]
+position = Vector2( -445.587, -347.445 )
+
+[node name="Caranguejo5" parent="YSort/Caranguejos" instance=ExtResource( 1 )]
+position = Vector2( -311.187, 147.959 )
+
+[node name="CasteloDeAreia" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( -792, 272 )
