@@ -15,18 +15,29 @@ var to_interact = null
 var velocity : Vector2 = Vector2(0,0)
 
 enum Mira{ UP, DOWN, LEFT, RIGHT }
-var mira
+enum State{
+	ANDANDO,
+	ATACANDO,
+	MORTO
+}
 
+var mira
+var state
 
 func _ready():
 	mira = Mira.DOWN
-	animationTree.active.true
+	state = State.ANDANDO
+	animationTree.active = true
 	pass
 
 
 func _physics_process(delta):
 	if player_state.game_state == Enums.GameState.FREE:
-		move(delta)
+		if state == State.ANDANDO:
+			move(delta)
+		elif state ==  State.ATACANDO:
+			pass
+			#attack(delta)
 	else:
 		velocity = Vector2(0,0)
 
@@ -35,12 +46,12 @@ func _input(event : InputEvent):
 	if player_state.game_state == Enums.GameState.FREE:
 		if event.is_action_pressed("interact"):
 			call_deferred("interact")
-		if event.is_action_pressed("attack"):
+		if event.is_action_pressed("attack") and state == State.ANDANDO:
 			if $AtaqueCooldown.time_left == 0:
 				$AtaqueCooldown.start(player_state.attack_cooldown)
 				if player_state.can_melee_attack:
+					state = State.ATACANDO
 					animationState.travel("Attack")
-					print("atacou")
 					attack()
 				elif player_state.can_ranged_attack:
 					shoot()
@@ -112,6 +123,11 @@ func attack():
 		body = body as PhysicsBody2D
 		if body.is_in_group("Enemy"):
 			body.take_damage(player_state.dano)
+
+
+func attack_animation_finished():
+	print("oii")
+	state = State.ANDANDO
 
 
 func shoot():

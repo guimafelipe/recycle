@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character/CharacterSpritesheet.png" type="Texture" id=2]
@@ -12,7 +12,7 @@ radius = 25.2769
 height = 36.056
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 62.5244, 52.9963 )
+extents = Vector2( 14.7449, 37.3417 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackDown"
@@ -101,6 +101,20 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -191,6 +205,20 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "AttackRight"
@@ -268,6 +296,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "AttackUp"
@@ -344,6 +386,20 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -944,31 +1000,6 @@ tracks/4/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=30]
-animation = "AttackDown"
-
-[sub_resource type="AnimationNodeAnimation" id=31]
-animation = "AttackUp"
-
-[sub_resource type="AnimationNodeAnimation" id=32]
-animation = "AttackRight"
-
-[sub_resource type="AnimationNodeAnimation" id=33]
-animation = "AttackLeft"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=34]
-blend_point_0/node = SubResource( 30 )
-blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 31 )
-blend_point_1/pos = Vector2( 0, -1.1 )
-blend_point_2/node = SubResource( 32 )
-blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 33 )
-blend_point_3/pos = Vector2( -1, 0 )
-min_space = Vector2( -1, -1.1 )
-max_space = Vector2( 1, 1.1 )
-blend_mode = 1
-
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "IdleLeft"
 
@@ -1021,24 +1052,13 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=35]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=36]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=37]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=38]
-
 [sub_resource type="AnimationNodeStateMachine" id=28]
-states/Attack/node = SubResource( 34 )
-states/Attack/position = Vector2( 182, 144 )
 states/Idle/node = SubResource( 20 )
 states/Idle/position = Vector2( 104, 67 )
 states/Walk/node = SubResource( 25 )
 states/Walk/position = Vector2( 272, 67 )
-transitions = [ "Idle", "Walk", SubResource( 26 ), "Walk", "Idle", SubResource( 27 ), "Walk", "Attack", SubResource( 35 ), "Attack", "Walk", SubResource( 36 ), "Idle", "Attack", SubResource( 37 ), "Attack", "Idle", SubResource( 38 ) ]
+transitions = [ "Idle", "Walk", SubResource( 26 ), "Walk", "Idle", SubResource( 27 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 0, 19.348 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=29]
 
@@ -1051,11 +1071,11 @@ armadilha = ExtResource( 6 )
 
 [node name="Slash" type="Sprite" parent="."]
 visible = false
-position = Vector2( 84.1494, -50.1521 )
+position = Vector2( -39.5015, -18.116 )
 z_index = 1
 texture = ExtResource( 6 )
 hframes = 16
-frame = 4
+frame = 3
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
@@ -1107,7 +1127,6 @@ tree_root = SubResource( 28 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 29 )
-parameters/Attack/blend_position = Vector2( -0.00305808, -0.00635839 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
 
