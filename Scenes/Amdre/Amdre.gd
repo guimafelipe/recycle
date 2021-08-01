@@ -20,6 +20,7 @@ var mira
 
 func _ready():
 	mira = Mira.DOWN
+	animationTree.active.true
 	pass
 
 
@@ -38,6 +39,8 @@ func _input(event : InputEvent):
 			if $AtaqueCooldown.time_left == 0:
 				$AtaqueCooldown.start(player_state.attack_cooldown)
 				if player_state.can_melee_attack:
+					animationState.travel("Attack")
+					print("atacou")
 					attack()
 				elif player_state.can_ranged_attack:
 					shoot()
@@ -65,6 +68,7 @@ func move(delta : float) -> void:
 		
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Walk/blend_position", input_vector)
+		animationTree.set("parameters/Attack/blend_position", input_vector)
 		animationState.travel("Walk")
 		velocity = velocity.move_toward(input_vector * player_state.MAX_SPEED, player_state.ACCELERATION * delta)
 	else:

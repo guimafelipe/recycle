@@ -1,11 +1,10 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character/CharacterSpritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
 [ext_resource path="res://Art/Armas/espada1.png" type="Texture" id=4]
 [ext_resource path="res://Art/Character/attack_left.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Items/Armadilha/Armadilha.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/Character/attack_moves_spritesheet.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -13,7 +12,7 @@ radius = 25.2769
 height = 36.056
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14.7449, 37.3417 )
+extents = Vector2( 62.5244, 52.9963 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackDown"
@@ -945,6 +944,31 @@ tracks/4/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "AttackDown"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "AttackUp"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "AttackRight"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "AttackLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=34]
+blend_point_0/node = SubResource( 30 )
+blend_point_0/pos = Vector2( 0, 1.1 )
+blend_point_1/node = SubResource( 31 )
+blend_point_1/pos = Vector2( 0, -1.1 )
+blend_point_2/node = SubResource( 32 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 33 )
+blend_point_3/pos = Vector2( -1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "IdleLeft"
 
@@ -997,13 +1021,24 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
 [sub_resource type="AnimationNodeStateMachine" id=28]
+states/Attack/node = SubResource( 34 )
+states/Attack/position = Vector2( 182, 144 )
 states/Idle/node = SubResource( 20 )
 states/Idle/position = Vector2( 104, 67 )
 states/Walk/node = SubResource( 25 )
 states/Walk/position = Vector2( 272, 67 )
-transitions = [ "Idle", "Walk", SubResource( 26 ), "Walk", "Idle", SubResource( 27 ) ]
+transitions = [ "Idle", "Walk", SubResource( 26 ), "Walk", "Idle", SubResource( 27 ), "Walk", "Attack", SubResource( 35 ), "Attack", "Walk", SubResource( 36 ), "Idle", "Attack", SubResource( 37 ), "Attack", "Idle", SubResource( 38 ) ]
 start_node = "Idle"
+graph_offset = Vector2( 0, 19.348 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=29]
 
@@ -1016,20 +1051,22 @@ armadilha = ExtResource( 6 )
 
 [node name="Slash" type="Sprite" parent="."]
 visible = false
-position = Vector2( -23.347, -20.1318 )
+position = Vector2( 84.1494, -50.1521 )
 z_index = 1
 texture = ExtResource( 6 )
 hframes = 16
+frame = 4
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
+flip_h = true
 hframes = 17
-frame = 3
+frame = 12
 
 [node name="Arma" type="Sprite" parent="."]
-position = Vector2( -56.0808, -69.4973 )
-rotation = -5.8678
+position = Vector2( -40.7251, -37.7347 )
+rotation = -6.58987
 texture = ExtResource( 4 )
 flip_h = true
 
@@ -1047,7 +1084,7 @@ limit_bottom = 1200
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( 41, -43.653 )
+position = Vector2( 91.8542, -31.9989 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1068,7 +1105,9 @@ anims/WalkUp = SubResource( 15 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 28 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 29 )
+parameters/Attack/blend_position = Vector2( -0.00305808, -0.00635839 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
 

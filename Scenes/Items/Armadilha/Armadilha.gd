@@ -16,7 +16,7 @@ func _on_LifeTime_timeout():
 	die()
 
 
-func _on_Armadilha_area_entered(coelhinho : Coelhinho):
-	if coelhinho:
-		coelhinho.die()
-		queue_free()
+#func _on_Armadilha_area_entered(coelhinho : Coelhinho):
+#	if coelhinho:
+#		coelhinho.die()
+#		queue_free()
