@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Recurso/Recurso.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Scenes/Inimigos/Coelhinho/Coelhinho.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Inimigos/Caranguejo/Caranguejo.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/EnvironmentObjects/Lake/Lake.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=16]
 
 [node name="Teste" type="YSort"]
 
@@ -64,7 +63,6 @@ position = Vector2( 606.327, 286.372 )
 
 [node name="Lake" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1427.42, 388.522 )
-player_state = ExtResource( 16 )
 
 [node name="Caranguejo" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1047.65, 368.146 )
