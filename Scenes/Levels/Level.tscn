@@ -61,3 +61,5 @@ shape = SubResource( 5 )
 [node name="YellowTree" parent="YSort/EnvironmentObjects/Trees" instance=ExtResource( 3 )]
 
 [node name="Rocks" type="YSort" parent="YSort/EnvironmentObjects"]
+
+[node name="Frutas" type="YSort" parent="YSort/EnvironmentObjects"]

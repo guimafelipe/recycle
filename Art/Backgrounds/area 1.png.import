@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BackgroundPlaceholder.png-c000bfb55efcaac788c95ed6a4837eea.stex"
+path="res://.import/area 1.png-517149d5cb0e321b491392537da2ccc4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Environment/BackgroundPlaceholder.png"
-dest_files=[ "res://.import/BackgroundPlaceholder.png-c000bfb55efcaac788c95ed6a4837eea.stex" ]
+source_file="res://Art/Backgrounds/area 1.png"
+dest_files=[ "res://.import/area 1.png-517149d5cb0e321b491392537da2ccc4.stex" ]
 
 [params]
 
