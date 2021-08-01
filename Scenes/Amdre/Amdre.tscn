@@ -5,6 +5,7 @@
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
 [ext_resource path="res://Art/Armas/espada1.png" type="Texture" id=4]
 [ext_resource path="res://Art/Character/attack_left.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Items/Armadilha/Armadilha.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/Character/attack_moves_spritesheet.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -1011,6 +1012,7 @@ script = ExtResource( 1 )
 player_state = ExtResource( 3 )
 hitbox = NodePath("HitBox")
 bullet = ExtResource( 5 )
+armadilha = ExtResource( 6 )
 
 [node name="Slash" type="Sprite" parent="."]
 visible = false
@@ -1071,4 +1073,7 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
 
 [node name="AtaqueCooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="ArmadilhaCooldown" type="Timer" parent="."]
 one_shot = true

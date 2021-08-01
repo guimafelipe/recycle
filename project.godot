@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://Scenes/Items/Armadilha/Armadilha.gd"
 }, {
 "base": "ItemImplementation",
+"class": "ArmadilhaImp",
+"language": "GDScript",
+"path": "res://Items/ArmadilhaDeCaca/ArmadilhaImp.gd"
+}, {
+"base": "ItemImplementation",
 "class": "BaldinhoImp",
 "language": "GDScript",
 "path": "res://Items/Baldinho/BaldinhoImp.gd"
@@ -38,6 +43,11 @@ _global_script_classes=[ {
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://Scenes/Inimigos/Marreco/Bullet.gd"
+}, {
+"base": "Area2D",
+"class": "Coelhinho",
+"language": "GDScript",
+"path": "res://Scenes/Inimigos/Coelhinho/Coelhinho.gd"
 }, {
 "base": "MarginContainer",
 "class": "CraftItemUI",
@@ -93,9 +103,11 @@ _global_script_class_icons={
 "Amdre": "",
 "AmdreBullet": "",
 "Armadilha": "",
+"ArmadilhaImp": "",
 "BaldinhoImp": "",
 "BarraHP": "",
 "Bullet": "",
+"Coelhinho": "",
 "CraftItemUI": "",
 "Dialogue": "",
 "Inimigo": "",

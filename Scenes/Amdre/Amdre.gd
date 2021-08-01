@@ -5,6 +5,7 @@ export(Resource) var player_state = player_state as PlayerState
 export(NodePath) onready var hitbox = get_node(hitbox) as Area2D
 
 export(PackedScene) var bullet
+export(PackedScene) var armadilha
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
@@ -127,6 +128,9 @@ func shoot():
 
 func usa_item():
 	if player_state.tem_armadilha:
-		# spawna armadilha
-		pass
-
+		print($ArmadilhaCooldown.time_left)
+		if $ArmadilhaCooldown.time_left == 0:
+			var arm = armadilha.instance() as Armadilha
+			arm.global_position = global_position
+			get_tree().root.add_child(arm)
+			$ArmadilhaCooldown.start(player_state.armadilha_cooldown)

@@ -1,4 +1,5 @@
 extends Area2D
+class_name Coelhinho
 
 enum States{
 	NATOCA,
@@ -8,6 +9,7 @@ enum States{
 
 export(float) var spawn_time = 1
 export(float) var alive_time = 2
+export(Resource) var player_state = player_state as PlayerState
 
 var state
 
@@ -18,6 +20,15 @@ func _ready():
 	monitoring = true
 	$CollisionShape2D.disabled = true
 	execute()
+
+
+func _process(delta):
+	if player_state.game_state != Enums.GameState.FREE:
+		$SpawnTimer.set_paused(true)
+		$AliveTimer.set_paused(true)
+	else:
+		$SpawnTimer.set_paused(false)
+		$AliveTimer.set_paused(false)
 
 
 func die():
@@ -40,7 +51,3 @@ func execute():
 	yield($SpawnTimer, "timeout")
 	queue_free()
 
-
-func _on_Coelhinho_area_entered(area : Armadilha):
-	if area:
-		die()

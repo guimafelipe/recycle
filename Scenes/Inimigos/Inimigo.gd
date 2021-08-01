@@ -19,7 +19,7 @@ func take_damage(dano : int):
 		die()
 
 
-func die(): # virtual
+func die(): # abstract
 	var spawner = get_node("RecursoSpawner") as RecursoSpawner
 	if spawner:
 		spawner.drop()
