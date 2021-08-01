@@ -15,7 +15,8 @@ Resource( "res://Items/PegadorDeFrutas.tres" ): false,
 Resource( "res://Items/Mapa.tres" ): false,
 Resource( "res://Items/SapatosDeCorrida.tres" ): false,
 Resource( "res://Items/EspadaDoReiDesnutrido.tres" ): false,
-Resource( "res://Items/Oculos.tres" ): true
+Resource( "res://Items/Oculos.tres" ): true,
+Resource( "res://Items/ArmadilhaDeCaca/ArmadilhaDeCaca.tres" ): false
 }
 recursos = {
 0: 5,
@@ -31,7 +32,7 @@ ACCELERATION = 400.0
 FRICTION = 500.0
 tem_baldinho = false
 tem_vara = false
-tem_armadilha = true
+tem_armadilha = false
 armadilha_cooldown = 5.0
 tem_esquerda = false
 tem_direita = false

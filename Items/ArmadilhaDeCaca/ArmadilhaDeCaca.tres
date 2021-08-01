@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://Items/Item.gd" type="Script" id=1]
+[ext_resource path="res://Items/ArmadilhaDeCaca/ArmadilhaImp.tres" type="Resource" id=2]
 
 [resource]
 script = ExtResource( 1 )
@@ -8,6 +9,7 @@ nome = "Armadilha de Caça"
 descricao = "Sorte que esses monstros são feitos de lixo. Eu não usaria isso em um animalzinho de verdade."
 id = 0
 tipo = 0
+implementation = ExtResource( 2 )
 recursos = {
 0: 0,
 1: 0,
