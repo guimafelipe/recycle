@@ -28,7 +28,7 @@ func _ready():
 	mira = Mira.DOWN
 	state = State.ANDANDO
 	animationTree.active = true
-	Events.connect("items_changed", self, "on_items_changed")
+	Events.connect("items_changed", self,"on_items_changed")
 	pass
 
 
@@ -53,7 +53,7 @@ func _input(event : InputEvent):
 				if player_state.can_melee_attack:
 					state = State.ATACANDO
 					animationState.travel("Attack")
-					attack()
+					#attack()
 				elif player_state.can_ranged_attack:
 					shoot()
 		if event.is_action_pressed("usar_item"):
@@ -163,4 +163,3 @@ func on_items_changed():
 		var item = _item as Item
 		if item.tipo == Enums.Tipo.DIREITA and player_state.items_disponiveis[item]:
 			$Arma.texture = item.textura
-			pass
