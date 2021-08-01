@@ -6,10 +6,11 @@
 [ext_resource path="res://Dialogues/RioSemVara.tres" type="Resource" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 355.0
+radius = 368.798
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 280, 150 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 200.0
+height = 181.665
 
 [node name="Lake" type="Node2D"]
 script = ExtResource( 2 )
@@ -27,7 +28,7 @@ texture = ExtResource( 1 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
 shape = SubResource( 2 )
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

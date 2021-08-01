@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/frutas1.png-8ffb31498856dd6bd7d3b542a2b30450.stex"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 66.8338
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 119.008
+
+[node name="Fruta1" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -11.8921, -220.003 )
+texture = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, -20.1815 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1.68182, -11.7725 )
+shape = SubResource( 3 )

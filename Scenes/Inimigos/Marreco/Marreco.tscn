@@ -3,17 +3,18 @@
 [ext_resource path="res://Scenes/Inimigos/Marreco/Marreco.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Inimigos/Marreco/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Art/Enemies/pato.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Inimigos/BarraHP.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Inimigos/RecursoSpawner/RecursoSpawner.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
+radius = 40.9399
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 195.96
+radius = 612.087
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 37.7966
+radius = 114.811
 
 [node name="Marreco" type="KinematicBody2D" groups=[
 "Enemy",
@@ -24,10 +25,11 @@ player_state = ExtResource( 3 )
 bullet_scene = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.351085, 0.764031 )
+position = Vector2( 12.6992, -22.2236 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Ranged" type="Area2D" parent="."]
@@ -57,7 +59,6 @@ margin_bottom = -34.1632
 
 [node name="RecursoSpawner" parent="." instance=ExtResource( 6 )]
 drop_rates = [ Vector2( 1, 3 ), Vector2( 0.6, 2 ), Vector2( 0, 0 ), Vector2( 1, 3 ) ]
-
 [connection signal="body_entered" from="Ranged" to="." method="_on_Ranged_body_entered"]
 [connection signal="body_exited" from="Ranged" to="." method="_on_Ranged_body_exited"]
 [connection signal="body_entered" from="Melee" to="." method="_on_Melee_body_entered"]

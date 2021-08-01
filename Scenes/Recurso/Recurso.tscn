@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Art/ResourceIcons/papel.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Recurso/RecursoNode.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Papel.tres" type="Resource" id=3]
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=4]
@@ -9,7 +9,7 @@
 radius = 27.1942
 
 [node name="RecursoNode" type="Sprite"]
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 recurso = ExtResource( 3 )
@@ -19,5 +19,4 @@ player_state = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

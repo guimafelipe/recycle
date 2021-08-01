@@ -80,10 +80,10 @@ func atacando(delta : float):
 		if res.collider is Amdre:
 			var body = res.collider as Amdre
 			body.take_damage(atk_dmg)
-			bouncing_from = res.position
-			state = States.BOUNCING
-			$BouncingTimer.start()
-			return
+		bouncing_from = res.position
+		state = States.BOUNCING
+		$BouncingTimer.start()
+		return
 	
 	if global_position.distance_to(alvo) < 10:
 		rescan()
