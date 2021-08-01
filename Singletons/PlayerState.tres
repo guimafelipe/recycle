@@ -5,18 +5,18 @@
 [resource]
 script = ExtResource( 1 )
 items_disponiveis = {
-Resource( "res://Items/Baldinho/Baldinho.tres" ): false,
-Resource( "res://Items/Espada/Espada.tres" ): false,
-Resource( "res://Items/Mapa.tres" ): false,
 Resource( "res://Items/EspadaDoReiDesnutrido.tres" ): false,
+Resource( "res://Items/Mapa.tres" ): false,
+Resource( "res://Items/Espada/Espada.tres" ): false,
+Resource( "res://Items/Baldinho/Baldinho.tres" ): false,
 Resource( "res://Items/SapatosDeCorrida.tres" ): false,
-Resource( "res://Items/RedeDeArremesso.tres" ): false,
+Resource( "res://Items/Bussola.tres" ): false,
 Resource( "res://Items/PegadorDeFrutas.tres" ): false,
-Resource( "res://Items/Estilingue.tres" ): false,
-Resource( "res://Items/Ponte.tres" ): false,
-Resource( "res://Items/Oculos.tres" ): true,
 Resource( "res://Items/Manopla.tres" ): false,
-Resource( "res://Items/Bussola.tres" ): false
+Resource( "res://Items/RedeDeArremesso.tres" ): false,
+Resource( "res://Items/Oculos.tres" ): true,
+Resource( "res://Items/Ponte.tres" ): false,
+Resource( "res://Items/Estilingue.tres" ): false
 }
 recursos = {
 0: 5,
