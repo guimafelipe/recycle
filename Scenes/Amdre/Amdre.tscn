@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character/CharacterSpritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
 [ext_resource path="res://Art/Armas/espada1.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Amdre/AmdreBullet.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 25.2769
@@ -274,6 +275,7 @@ states/Idle/position = Vector2( 104, 67 )
 script = ExtResource( 1 )
 player_state = ExtResource( 3 )
 hitbox = NodePath("HitBox")
+bullet = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
@@ -324,3 +326,6 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 position = Vector2( 52.7823, -76.8672 )
 rotation = -5.52116
 texture = ExtResource( 4 )
+
+[node name="AtaqueCooldown" type="Timer" parent="."]
+one_shot = true

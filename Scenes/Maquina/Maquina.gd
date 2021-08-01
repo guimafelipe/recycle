@@ -25,7 +25,7 @@ func _input(event : InputEvent):
 		call_deferred("finish_interact")
 
 
-func interact() -> void:
+func interact(player : Amdre) -> void:
 	player_state.game_state = Enums.GameState.MAQUINA
 	Events.emit_signal("cannot_interact")
 	update_ui()

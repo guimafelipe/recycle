@@ -21,9 +21,13 @@ export(float) var ACCELERATION = 400
 export(float) var FRICTION = 500
 
 export(bool) var tem_baldinho = false
+export(bool) var tem_vara = false
 
-var tem_esquerda := false
-var tem_direita := false
+export(bool) var tem_esquerda := false
+export(bool) var tem_direita := false
 
-var can_melee_attack := false
-var can_ranged_attack := false
+export(bool) var can_melee_attack := false
+export(bool) var can_ranged_attack := false
+
+export(float) var attack_cooldown := 1.0
+export(int) var bullet_speed := 850
