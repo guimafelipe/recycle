@@ -29,6 +29,7 @@ func _ready():
 	state = State.ANDANDO
 	animationTree.active = true
 	Events.connect("items_changed", self,"on_items_changed")
+	Events.connect("dialog_ended", self, "attack_animation_finished")
 	pass
 
 
@@ -38,8 +39,8 @@ func _physics_process(delta):
 			move(delta)
 		elif state ==  State.ATACANDO:
 			pass
-			#attack(delta)
 	else:
+		animationState.travel("Idle")
 		velocity = Vector2(0,0)
 
 
@@ -128,7 +129,6 @@ func attack():
 
 
 func attack_animation_finished():
-	print("oii")
 	state = State.ANDANDO
 
 

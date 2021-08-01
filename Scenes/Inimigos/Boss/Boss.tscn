@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Art/Enemies/boss_idle.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Inimigos/Boss/Boss.gd" type="Script" id=2]
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
 [ext_resource path="res://Scenes/Inimigos/BarraHP.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Inimigos/Boss/BossBullet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Dialogues/DialogoFinal.tres" type="Resource" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 258.622
@@ -28,6 +29,7 @@ hp = 1
 player_state = ExtResource( 3 )
 bouncing_duration = 1.0
 bullet_scene = ExtResource( 5 )
+dialogo = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -16.9897, -39.6427 )
@@ -67,6 +69,7 @@ margin_right = 167.945
 margin_bottom = -217.218
 value = 50.0
 nine_patch_stretch = true
+
 [connection signal="body_entered" from="RangeMelee" to="." method="_on_RangeMelee_body_entered"]
 [connection signal="body_exited" from="RangeMelee" to="." method="_on_RangeMelee_body_exited"]
 [connection signal="body_entered" from="RangeSeguir" to="." method="_on_RangeSeguir_body_entered"]
