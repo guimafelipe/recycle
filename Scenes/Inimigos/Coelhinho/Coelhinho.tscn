@@ -7,7 +7,6 @@
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 86.7713
 
 [node name="Coelhinho" type="Area2D" groups=[
 "Enemy",
@@ -37,4 +36,5 @@ one_shot = true
 
 [node name="RecursoSpawner" parent="." instance=ExtResource( 4 )]
 drop_rates = [ Vector2( 1, 3 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+
 [connection signal="area_entered" from="." to="." method="_on_Coelhinho_area_entered"]

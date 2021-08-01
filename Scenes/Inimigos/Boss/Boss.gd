@@ -7,6 +7,7 @@ enum States {
 	ATACANDO,
 	BOUNCING,
 	RECUPERANDO,
+	MORTO
 }
 
 export(int) var atk_dmg = 45
@@ -26,9 +27,10 @@ export(float) var bouncing_duration = 2.0
 
 export(PackedScene) var bullet_scene
 
-
+var bouncing_from : Vector2
+var velocity := Vector2.ZERO
 var state
-var alvo
+var alvo : Vector2
 
 func _ready():
 	$RangeMelee/CollisionShape2D.shape.radius = range_ataque
@@ -54,7 +56,6 @@ func _physics_process(delta : float):
 		atacando(delta)
 	elif state == States.BOUNCING:
 		$BouncingTimer.set_paused(false)
-		bouncing(delta)
 	elif state == States.RECUPERANDO:
 		$RecuperandoTimer.set_paused(false)
 	elif state == States.MORTO:
@@ -66,19 +67,43 @@ func idle():
 
 
 func seguindo(delta : float):
-	pass
+	velocity = global_position.direction_to(player.global_position).normalized()*follow_speed
+	move_and_slide(velocity)
 
 
 func atacando(delta : float):
-	pass
+	velocity = global_position.direction_to(alvo)*ataque_speed
+	var res := move_and_collide(velocity*delta)
+	
+	if res:
+		if res.collider is Amdre:
+			var body = res.collider as Amdre
+			body.take_damage(atk_dmg)
+		bouncing_from = res.position
+		state = States.BOUNCING
+		$BouncingTimer.start()
+		return
+	
+	if global_position.distance_to(alvo) < 10:
+		rescan()
 
 
 func bouncing(delta : float):
-	pass
+	velocity = -global_position.direction_to(bouncing_from)*bouncing_speed
+	move_and_slide(velocity)
 
 
 func ranged():
-	pass
+	if $TiroCooldown.time_left == 0:
+		atira()
+		$TiroCooldown.start(cooldown_tiro)
+
+
+func atira() -> void:
+	var target = player.global_position
+	var bullet = bullet_scene.instance() as BossBullet
+	bullet.set_alvo(target, global_position)
+	get_tree().root.add_child(bullet)
 
 
 func morto():
@@ -108,7 +133,7 @@ func _on_RangeSeguir_body_entered(body : Amdre):
 		state = States.SEGUINDO
 
 
-func _on_RangeSeguir_body_exited(body):
+func _on_RangeSeguir_body_exited(body : Amdre):
 	if not body:
 		return
 	if state == States.RANGED:
@@ -151,3 +176,7 @@ func rescan() -> void:
 		state = States.SEGUINDO
 	elif $RangeAtirar.overlaps_body(player):
 		state = States.RANGED
+
+
+func _on_BouncingTimer_timeout():
+	rescan()
