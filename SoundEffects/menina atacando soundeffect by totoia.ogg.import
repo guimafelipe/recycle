@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/menina atacando soundeffect by totoia.ogg-1887648f579081b9e8c06305f5286f11.oggstr"
+
+[deps]
+
+source_file="res://SoundEffects/menina atacando soundeffect by totoia.ogg"
+dest_files=[ "res://.import/menina atacando soundeffect by totoia.ogg-1887648f579081b9e8c06305f5286f11.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

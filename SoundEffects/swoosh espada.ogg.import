@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/swoosh espada.ogg-7fc57a8a18dbdbbaf7919c3e925c4c90.oggstr"
+
+[deps]
+
+source_file="res://SoundEffects/swoosh espada.ogg"
+dest_files=[ "res://.import/swoosh espada.ogg-7fc57a8a18dbdbbaf7919c3e925c4c90.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

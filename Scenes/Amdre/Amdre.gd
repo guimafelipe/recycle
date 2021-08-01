@@ -116,6 +116,7 @@ func take_damage(dmg : int) -> void:
 	player_state.hp -= dmg
 	player_state.hp = max(0, player_state.hp)
 	Events.emit_signal("hp_changed")
+	$AudioStreamPlayerHurt.play()
 
 
 func attack():
@@ -143,6 +144,8 @@ func shoot():
 	else:
 		direction = Vector2(1, 0)
 	b.set_params(direction, global_position)
+	
+	$AudioStreamPlayerShoot.play()
 	
 	get_tree().root.add_child(b)
 

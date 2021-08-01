@@ -1,10 +1,13 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scenes/Amdre/Amdre.gd" type="Script" id=1]
 [ext_resource path="res://Art/Character/CharacterSpritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Singletons/PlayerState.tres" type="Resource" id=3]
+[ext_resource path="res://SoundEffects/menina tomando dano soundeffect by totoia.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Art/Character/attack_left.png" type="Texture" id=5]
 [ext_resource path="res://Art/Character/attack_moves_spritesheet.png" type="Texture" id=6]
+[ext_resource path="res://SoundEffects/menina atacando soundeffect by totoia.ogg" type="AudioStream" id=7]
+[ext_resource path="res://SoundEffects/swoosh espada.ogg" type="AudioStream" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 25.2769
@@ -178,6 +181,20 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 80.0, 80.0, 80.0, 80.0, 80.0 ]
 }
+tracks/13/type = "audio"
+tracks/13/path = NodePath("AudioStreamPlayer")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0.2 )
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "AttackLeft"
@@ -342,6 +359,20 @@ tracks/12/keys = {
 "args": [  ],
 "method": "attack"
 } ]
+}
+tracks/13/type = "audio"
+tracks/13/path = NodePath("AudioStreamPlayer")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0.2 )
 }
 
 [sub_resource type="Animation" id=5]
@@ -508,6 +539,20 @@ tracks/12/keys = {
 "method": "attack"
 } ]
 }
+tracks/13/type = "audio"
+tracks/13/path = NodePath("AudioStreamPlayer")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0.2 )
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "AttackUp"
@@ -660,6 +705,20 @@ tracks/11/keys = {
 "args": [  ],
 "method": "attack"
 } ]
+}
+tracks/12/type = "audio"
+tracks/12/path = NodePath("AudioStreamPlayer")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0.2 )
 }
 
 [sub_resource type="Animation" id=7]
@@ -1368,18 +1427,17 @@ bullet = ExtResource( 5 )
 armadilha = ExtResource( 6 )
 
 [node name="Slash" type="Sprite" parent="."]
-position = Vector2( 77.6784, -53.7725 )
+position = Vector2( 69.5622, -66.8408 )
 z_index = 1
 texture = ExtResource( 6 )
 hframes = 16
-frame = 11
+frame = 10
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -75 )
 texture = ExtResource( 2 )
-flip_h = true
 hframes = 17
-frame = 5
+frame = 4
 
 [node name="Arma" type="Sprite" parent="."]
 visible = false
@@ -1435,4 +1493,12 @@ one_shot = true
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -11.2
 
+[node name="AudioStreamPlayerHurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -27.2
+
+[node name="AudioStreamPlayerShoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
